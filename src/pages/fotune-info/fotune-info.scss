@@ -1,0 +1,87 @@
+page-fotune-info {
+    ion-content {
+        background-image: url("../assets/image/background.png");
+    }
+    .info-content {
+        width: 90%;
+        height: calc(80% - 40px);
+        position: relative;
+        margin-left: 5%;
+        top: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow: scroll;
+        .info-item {
+            background: rgba($color: black, $alpha: .2);
+            min-height: 80px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            p {
+                color: white;
+                text-align: justify;
+                font-style: italic;
+                font-size: 1.2rem;
+            }
+            .info-item-title {
+                .info-name {
+                    width: 80%;
+                    span {
+                        color: #f2d172;
+                        font-weight: bold;
+                        white-space: nowrap;
+                    }
+                }
+                .info-image {
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+    .frame_2 {
+        position: absolute;
+        top: 20px;
+        left: 5%;
+        bottom: 10%;
+        right: 5%;
+        z-index: -1;
+        width: 90%;
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+    .frame-btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 10%;
+        width: 100%;
+        .btn {
+            height: 50px;
+            width: 50%;
+            .btn-back {
+                height: 50px;
+                width: 100%;
+                img {
+                    position: absolute;
+                    right: 10px;
+                    top: -10px;
+                    width: 65%;
+                }
+            }
+            .btn-contact {
+                height: 50px;
+                width: 100%;
+                img {
+                    position: absolute;
+                    left: 10px;
+                    top: -10px;
+                    width: 65%;
+                }
+            }
+        }
+    }
+}

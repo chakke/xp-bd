@@ -1,0 +1,124 @@
+<!--
+  Generated template for the FotuneDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <div class="a1-relative" style="height: 56px">
+        <div class="head-container a3-container a3-justify-between">
+            <div class="line-container">
+                <div class="line" *ngFor="let image of resultLines">
+                    <img src="{{image}}">
+                </div>
+            </div>
+            <div class="text-container a3-container-center">
+                <img src="{{fotune.imageSrc}}">
+            </div>
+        </div>
+    </div>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="a1-container detailPage-container">
+        <div class="frame-background a1-absolute"></div>
+        <div class="frame_1">
+            <img src="assets/image/frame_1.png">
+        </div>
+        <div class="divContent a1-relative">
+            <div class="nameInVn" text-center>
+                <span class="span-1"> <span>{{fotune.nameInVN.slice(0,1).toUpperCase()}}</span>{{fotune.nameInVN.split('(')[0].substring(1).toLowerCase()}}</span>
+            </div>
+            <div class="nameInVn" text-center>
+                <span class="span-2">( {{fotune.nameInVN.split('(')[1].replace(")", "")}} )</span>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-item">
+                    <div class="attribute-name">
+                        <span>Ý nghĩa: </span>
+                    </div>
+                    <div class="attribute-content">
+                        <p>{{fotune.means}}</p>
+                    </div>
+                </div>
+                <div class="attribute-item">
+                    <div class="attribute-name">
+                        <span>Giải đoán: </span>
+                    </div>
+                    <div class="attribute-content">
+                        <p>{{fotune.analysis}}</p>
+                    </div>
+                </div>
+                <div class="attribute-item">
+                    <div class="attribute-name">
+                        <span>Lời khuyên: </span>
+                    </div>
+                    <div class="attribute-content">
+                        <p> {{fotune.advice}}</p>
+                    </div>
+                </div>
+                <div class="attribute-item">
+                    <div class="attribute-name">
+                        <span>Ứng hạp: </span>
+                    </div>
+                    <div class="attribute-content">
+                        <div class="uh-row a3-container">
+                            <div class="uh-title">
+                                <span>Tuổi</span>
+                            </div>
+                            <div class="uh-content">
+                                <span>{{fotune.UH.olds}}</span>
+                            </div>
+                        </div>
+                        <div class="uh-row a3-container">
+                            <div class="uh-title">
+                                <span>Tháng</span>
+                            </div>
+                            <div class="uh-content">
+                                <span>{{fotune.UH.month}}</span>
+                            </div>
+                        </div>
+                        <div class="uh-row a3-container">
+                            <div class="uh-title">
+                                <span>Hành</span>
+                            </div>
+                            <div class="uh-content">
+                                <span>{{fotune.UH.hanh}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="attribute-item">
+                    <div class="attribute-name">
+                        <span>Phụ chú: </span>
+                    </div>
+                    <div class="attribute-content">
+                        <p>{{fotune.more}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <div class="height-56 a1-relative a3-container a3-justify-between">
+        <div class="btn">
+            <div class="btn-more">
+                <img src="assets/image/btn_more_1.png">
+            </div>
+        </div>
+        <div style="width: 60%" class="a1-container">
+            <div class="btn-back" (click)="closeView()">
+                <img src="assets/image/btn_back_2.png">
+            </div>
+        </div>
+        <div class="btn">
+            <div class="btn-facebook ">
+                <img src="assets/image/btn_facebook_1.png">
+            </div>
+        </div>
+        <div class="bot_bar"></div>
+    </div>
+</ion-footer>
