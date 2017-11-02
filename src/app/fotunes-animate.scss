@@ -3,193 +3,193 @@
     }
     
     @keyframes eff-text-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-webkit-keyframes eff-text-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-moz-keyframes eff-text-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-ms-keyframes eff-text-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-o-keyframes eff-text-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     .eff-bg-animate {
-        animation: eff-bg-idle 2s steps(27) infinite;
+        animation: eff-bg-idle 5s steps(27) infinite;
     }
     
     @keyframes eff-bg-idle {
-        from {
+        0% {
             transform: translate3d(0px, 0px, 0px);
         }
-        to {
+        100% {
             transform: translate3d(-2700%, 0px, 0px);
         }
     }
     
     @-webkit-keyframes eff-bg-idle {
-        from {
+        0% {
             transform: translate3d(0px, 0px, 0px);
         }
-        to {
+        100% {
             transform: translate3d(-2700%, 0px, 0px);
         }
     }
     
     @-moz-keyframes eff-bg-idle {
-        from {
+        0% {
             transform: translate3d(0px, 0px, 0px);
         }
-        to {
+        100% {
             transform: translate3d(-2700%, 0px, 0px);
         }
     }
     
     @-ms-keyframes eff-bg-idle {
-        from {
+        0% {
             transform: translate3d(0px, 0px, 0px);
         }
-        to {
+        100% {
             transform: translate3d(-2700%, 0px, 0px);
         }
     }
     
     @-o-keyframes eff-bg-idle {
-        from {
+        0% {
             transform: translate3d(0px, 0px, 0px);
         }
-        to {
+        100% {
             transform: translate3d(-2700%, 0px, 0px);
         }
     }
     
     .eff-rs-start-animate {
-        animation: eff-rs-start 1.2s steps(15) infinite;
+        animation: eff-rs-start 1.4s steps(15) infinite;
     }
     
     @-webkit-keyframes eff-rs-start {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1500%, 0px);
         }
     }
     
     @-moz-keyframes eff-rs-start {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1500%, 0px);
         }
     }
     
     @-ms-keyframes eff-rs-start {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1500%, 0px);
         }
     }
     
     @-o-keyframes eff-rs-start {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1500%, 0px);
         }
     }
     
     @keyframes eff-rs-start {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1500%, 0px);
         }
     }
     
     .eff-rs-end-animate {
-        animation: eff-rs-end 1.4s steps(14) infinite;
+        animation: eff-rs-end 1.6s steps(14) infinite;
     }
     
     @-webkit-keyframes eff-rs-end {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-moz-keyframes eff-rs-end {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-ms-keyframes eff-rs-end {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-o-keyframes eff-rs-end {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @keyframes eff-rs-end {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
@@ -199,95 +199,144 @@
     }
     
     @-webkit-keyframes btn-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-moz-keyframes btn-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-ms-keyframes btn-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @-o-keyframes btn-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     @keyframes btn-idle {
-        from {
+        0% {
             transform: translate(0px, 0px);
         }
-        to {
+        100% {
             transform: translate(-1400%, 0px);
         }
     }
     
     .run-skeleton-animate {
-        animation: skeleton .6s steps(5) 6;
+        animation: skeleton .6s steps(5) 5;
     }
     
     @-webkit-keyframes skeleton {
-        from {
-            transform: translate(0px, 0px);
+        0% {
+            transform: translate3d(0px, 0px, 0px);
         }
-        to {
-            transform: translate(-500%, 0px);
+        100% {
+            transform: translate3d(-500%, 0px, 0px);
         }
     }
     
     @-moz-keyframes skeleton {
-        from {
-            transform: translate(0px, 0px);
+        0% {
+            transform: translate3d(0px, 0px, 0px);
         }
-        to {
-            transform: translate(-500%, 0px);
+        100% {
+            transform: translate3d(-500%, 0px, 0px);
         }
     }
     
     @-ms-keyframes skeleton {
-        from {
-            transform: translate(0px, 0px);
+        0% {
+            transform: translate3d(0px, 0px, 0px);
         }
-        to {
-            transform: translate(-500%, 0px);
+        100% {
+            transform: translate3d(-500%, 0px, 0px);
         }
     }
     
     @-o-keyframes skeleton {
-        from {
-            transform: translate(0px, 0px);
+        0% {
+            transform: translate3d(0px, 0px, 0px);
         }
-        to {
-            transform: translate(-500%, 0px);
+        100% {
+            transform: translate3d(-500%, 0px, 0px);
         }
     }
     
     @keyframes skeleton {
-        from {
-            transform: translate(0px, 0px);
+        0% {
+            transform: translate3d(0px, 0px, 0px);
         }
-        to {
-            transform: translate(-500%, 0px);
+        100% {
+            transform: translate3d(-500%, 0px, 0px);
+        }
+    }
+    
+    .run-rotate-360-animate {
+        animation: rotate-360 2s steps(72) infinite;
+    }
+    
+    @-webkit-keyframes rotate-360 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    
+    @-moz-keyframes rotate-360 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    
+    @-ms-keyframes rotate-360 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    
+    @-o-keyframes rotate-360 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    
+    @keyframes rotate-360 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
         }
     }

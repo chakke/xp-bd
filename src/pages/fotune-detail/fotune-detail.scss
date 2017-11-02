@@ -1,6 +1,9 @@
 page-fotune-detail {
     ion-content {
         background-image: url("../assets/image/background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     .footer-md::before {
         height: 0;
@@ -50,9 +53,14 @@ page-fotune-detail {
         z-index: -1;
         width: 100%;
         height: 100%;
-        background-position: center center;
-        background-size: cover;
-        background-image: url("../assets/image/frame_effect.png");
+        position: absolute;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        // background-position: center center;
+        // background-size: cover;
+        // background-image: url("../assets/image/frame_effect.png");
     }
     .detailPage-container {
         line-height: unset;
@@ -73,7 +81,7 @@ page-fotune-detail {
             width: calc(100% - 20px);
             margin: auto;
             margin-top: 8%;
-            height: 90%;
+            height: 86%;
             overflow: hidden;
             .nameInVn {
                 width: 100%;
@@ -92,15 +100,16 @@ page-fotune-detail {
             }
             .attribute-container {
                 overflow: scroll;
-                height: 82%;
+                padding: 10px;
+                height: 90%;
                 .attribute-item {
                     background: rgba(black, 0.2);
-                    width: 86%;
+                    width: 94%;
                     margin: auto;
                     margin-bottom: 16px;
                     min-height: 80px;
                     border-radius: 5px;
-                    padding: 10px;
+                    padding: 5px;
                     .attribute-name {
                         span {
                             color: #e6a044;
@@ -111,7 +120,7 @@ page-fotune-detail {
                     .attribute-content {
                         p {
                             margin: 0;
-                            padding: 5px;
+                            padding: 4px;
                             color: white;
                             font-style: italic;
                             white-space: pre-wrap;

@@ -17,17 +17,18 @@ import { Fotunes } from '../../providers/class/fotunes';
 export class FotuneDetailPage {
   resultLines: string[] = [];
   fotune  : Fotunes;
-  isLoading: boolean = true;
+  isLoading: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.fotune = new Fotunes();
     for(let i = 0;i<6;i++){
       this.resultLines.push("./assets/image/line_bg.png");
     }
-  }
-
-  ionViewDidEnter() {
     this.loadParams();
   }
+
+  // ionViewDidEnter() {
+  //   this.loadParams();
+  // }
   loadParams(){
     if(this.navParams.get("fotune")){
       this.fotune = this.navParams.get("fotune");
@@ -42,7 +43,7 @@ export class FotuneDetailPage {
     }else{
       return;
     }
-    this.isLoading = false;
+    // this.isLoading = false;
   }
   closeView(){
     this.navCtrl.pop();

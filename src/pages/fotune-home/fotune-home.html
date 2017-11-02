@@ -26,7 +26,7 @@
                 <div class="eff-rs-end-bg hideDiv" [class.showDiv]="isShuffer6">
                     <div class="sprite-container">
                         <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation eff-rs-end-animate">
+                        <div class="sprite-animation " [class.eff-rs-end-animate]="isShuffer6">
                             <div class="sprite-image" *ngFor="let image of resultEndPath">
                                 <img src="{{image}}">
                             </div>
@@ -34,10 +34,10 @@
                     </div>
                 </div>
                 <!-- [class.showDiv]="isShuffer6" -->
-                <div class="eff-rs-bg" [class.hideDiv]="isShuffer6">
+                <div class="eff-rs-bg">
                     <div class="sprite-container">
                         <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation " [class.eff-rs-start-animate]="dem<6">
+                        <div class="sprite-animation eff-rs-start-animate">
                             <div class="sprite-image" *ngFor="let image of resultStartPath">
                                 <img src="{{image}}">
                             </div>
@@ -95,17 +95,16 @@
                 </div>
             </div>
             <div class="a1-height-60 a1-relative a3-container-center ">
-                <div class="skeleton-background" [class.hideDiv]="isShuffer6"></div>
-                <div class="eff-bg hideDiv" [class.showDiv]="isShuffer6">
+                <div class="skeleton-background"></div>
+                <!-- <div class="eff-bg">
                     <div class="sprite-container">
-                        <!-- eff-bg-animate -->
-                        <div class="sprite-animation eff-bg-animate">
+                        <div class="sprite-animation " [class.eff-bg-animate]="!isShuffer6">
                             <div class="sprite-image" *ngFor="let image of effBgIdle">
                                 <img src="{{image}}">
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="skeleton-show" [class.hideDiv]="isRunShuffe">
                     <div class="skeleton-plate-background a3-container-center a1-relative" text-center>
                         <div class="coins-container">
@@ -124,7 +123,7 @@
                         <div class="skeleton-plate-cover a1-relative" id="skeletonCover"></div>
                     </div>
                 </div>
-                <div class="skeleton-animate" [class.hideDiv]="!isRunShuffe">
+                <div class="skeleton-animate hideDiv" [class.showDiv]="isRunShuffe">
                     <div class="sprite-container">
                         <!-- run-skeleton-animate -->
                         <div class="sprite-animation" [class.run-skeleton-animate]="isRunShuffe">
@@ -137,7 +136,7 @@
             </div>
             <div class="a1-height-20 a1-relative">
                 <div class="btn-animate hideDiv" [class.showDiv]="isShuffer6">
-                    <div class="sprite-container a1-z-2">
+                    <div class="sprite-container">
                         <!-- btn-animate-idle -->
                         <div class="sprite-animation btn-animate-idle">
                             <div class="sprite-image" *ngFor="let image of effBtn">
@@ -160,7 +159,7 @@
     <div class="height-56 bot-bar-background a1-relative a3-container a3-justify-between">
         <div class="btn">
             <div class="btn-more">
-                <img src="assets/image/btn_more_2.png">
+                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi"> <img src="assets/image/btn_more_2.png"></a>
             </div>
         </div>
         <div class="title a3-container-center" text-center>
@@ -168,7 +167,7 @@
         </div>
         <div class="btn">
             <div class="btn-facebook">
-                <img src="assets/image/btn_facebook_2.png">
+                <a href="https://www.facebook.com/groups/123547708286399/"> <img src="assets/image/btn_facebook_2.png"></a>
             </div>
         </div>
         <div class="bot_bar"></div>

@@ -157,6 +157,7 @@
         "./assets/image/text/text_64.png",
         "./assets/image/background.png",
         "./assets/image/bot_bar_1.png",
-        "./assets/image/bot_bar_2.png"
+        "./assets/image/bot_bar_2.png",
+        "./assets/image/ss.png"
     ]
 }

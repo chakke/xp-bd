@@ -49,7 +49,7 @@ export class FotuneLoadingPage {
 
   onLoaded() {
     this.navCtrl.setRoot(FotuneHomePage, {}, {
-      animate: true,
+      animate: false,
       direction: "forward",
       duration: 400
     });
