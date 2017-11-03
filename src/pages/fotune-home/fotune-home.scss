@@ -135,11 +135,12 @@ page-fotune-home {
         // overflow: scroll;
         .btn-animate {
             position: absolute;
-            top: 0px;
+            top: -12px;
             width: 50%;
             left: 25%;
-            height: 90px;
-            padding-bottom: 10px;
+            height: 85px;
+            padding-left: 6px;
+            padding-right: 7px;
         }
         .btn-show {
             position: relative;

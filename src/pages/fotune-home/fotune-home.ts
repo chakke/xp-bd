@@ -18,7 +18,7 @@ export class FotuneHomePage {
   pathSkeleton: string = "./assets/image/frame/skeleton-play_";
   pathResultStart: string = "./assets/image/frame/eff_result-start_";
   pathResultEnd: string = "./assets/image/frame/eff_result-end_";
-  pathBgIdle: string = "./assets/image/frame/eff_bg-idle_";
+  // pathBgIdle: string = "./assets/image/frame/eff_bg-idle_";
   pathbtn: string = "./assets/image/frame/eff_btn-idle_";
   pathText: string = "./assets/image/frame/eff_text-idle_";
   coins: string[] = [];
@@ -115,9 +115,9 @@ export class FotuneHomePage {
   isTransition: boolean = false;
   showResult(BgNumber: number) {
     this.isTransition = true;
-    console.log("show result");
+    // console.log("show result");
     if (BgNumber) {
-      console.log("open skeleton");
+      // console.log("open skeleton");
       this.openSkeleton();
       setTimeout(() => {
         let els = document.getElementById(this.lineID[6 - this.numberQue]);
@@ -129,7 +129,7 @@ export class FotuneHomePage {
             this.resultLines.push(imageSrc);
             elem.style.opacity = '1';
             elembg.style.opacity = '0';
-            console.log("show image done");
+            // console.log("show image done");
           } else {
             return;
           }
@@ -138,7 +138,7 @@ export class FotuneHomePage {
       setTimeout(() => {
         this.closeSkeleton();
         setTimeout(() => {
-          console.log("close skeleton done");
+          // console.log("close skeleton done");
           this.isTransition = false;
           if(this.numberQue<6){
             this.numberQue++;
@@ -148,7 +148,7 @@ export class FotuneHomePage {
         }, 800);
       }, 1600);
     }else{
-      console.log(BgNumber);
+      // console.log(BgNumber);
       
     }
   }
@@ -156,7 +156,7 @@ export class FotuneHomePage {
   //
   isShowResult: boolean = false;
   getIDResult() {
-    console.log("get  ID result");
+    // console.log("get  ID result");
     this.isShuffer6 = true;
     if (this.idResult.length == 6 && this.numberQue == 6) {
       this.fotune.setID(parseInt(this.idResult));
@@ -167,7 +167,7 @@ export class FotuneHomePage {
         return;
       }
     } else {
-      console.log("chua gieo du 6 que");
+      // console.log("chua gieo du 6 que");
       return;
     }
   }
@@ -190,19 +190,19 @@ export class FotuneHomePage {
     }
     if (!this.isRunShuffe && !this.isTransition) {
       this.isRunShuffe = true;
-      console.log("run shuffer");
+      // console.log("run shuffer");
 
       this.playAudio();
       let Bgnumber: number = this.runRandomCoins();
       this.translateCoins();
       setTimeout(() => {
-        console.log("run shuffer done");
+        // console.log("run shuffer done");
         this.showResult(Bgnumber);
         this.isRunShuffe = false;
        
       }, 4000);
     } else {
-      console.log("Dang shuffer");
+      // console.log("Dang shuffer");
       return;
     }
 
@@ -230,39 +230,27 @@ export class FotuneHomePage {
     }
   }
 
+  getPosition(data: number[]) : number[]{
+    let array : number [] = [];
+    for(var i = 0;i < data.length;i++){
+      array.push(data[i] + this.runRandomPosition(15));
+    }
+    return array;
+  }
+
   translateCoins() {
     let coinElements = document.getElementsByClassName("coin");
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-      for (var index = 0; index < xPosition.length; index++) {
-        xPosition[index] = this.runRandomPosition(60);
-        yPosition[index] = this.runRandomPosition(60);
-          if(index>0){
-            for(var j = 0;j< index;j++){
-              if(Math.abs(xPosition[index] - xPosition[j]) < 15){
-                if(xPosition[j]>45){
-                  xPosition[index] = xPosition[j]-20;
-                }else{
-                  xPosition[index] = xPosition[j]+20;
-                }
-              }
-              if(Math.abs(yPosition[index] - yPosition[j]) < 15){
-                if(yPosition[j]>45){
-                  yPosition[index] = yPosition[j]-20;
-                }else{
-                  yPosition[index] = yPosition[j]+20;
-                }
-              }
-            }
-          }
-      }
+      xPosition = this.getPosition([36,56,16]);
+      yPosition = this.getPosition([23,33,43]);
       for (let i = 0; i < coinElements.length; i++) {
         let element = <HTMLElement>coinElements[i];
         element.style.transform = "translate(" + xPosition[i] + "px" + "," + yPosition[i] + "px" + ")";
       }
     } else {
-      console.log("element coin k render");
+      // console.log("element coin k render");
       return;
     }
   }
@@ -272,41 +260,28 @@ export class FotuneHomePage {
   runRandomPosition(number: number): number {
       return Math.round(Math.random() * number);
   }
-  getlineBg(number1: number, number2: number, number3: number): number {
-    let sum = number1 + number2 + number3;
+  runRandomCoins(): number {
+    var sum : number = 0;
+    for(let i = 0; i < 3; i++){
+      var number = Math.round(Math.random());
+      sum+= number;
+      if(number==0){
+        this.coins[i] = this.pathCoin2;
+      }else{
+        this.coins[i] = this.pathCoin1;
+      }
+    }
     if (sum <= 1) {
       this.idResult += "0";
     } else {
       this.idResult += "1";
     }
-    return sum + 1;
-  }
-  runRandomCoins(): number {
-    var number1 = Math.round(Math.random());
-    if (number1 == 0) {
-      this.coins[0] = this.pathCoin2;
-    } else {
-      this.coins[0] = this.pathCoin1;
-    }
-    var number2 = Math.round(Math.random());
-    if (number2 == 0) {
-      this.coins[1] = this.pathCoin2;
-    } else {
-      this.coins[1] = this.pathCoin1;
-    }
-    var number3 = Math.round(Math.random());
-    if (number3 == 0) {
-      this.coins[2] = this.pathCoin2;
-    } else {
-      this.coins[2] = this.pathCoin1;
-    }
-    let bgNumber: number = this.getlineBg(number1, number2, number3);
-    return bgNumber;
+    return sum+1;
   }
   skeletonPath: string[] = [];
   resultStartPath: string[] = [];
   resultEndPath: string[] = [];
-  effBgIdle: string[] = [];
+  // effBgIdle: string[] = [];
   effBtn: string[] = [];
   effText: string[] = [];
 
@@ -322,9 +297,9 @@ export class FotuneHomePage {
         this.resultEndPath.push(this.pathResultEnd + j + ".png");
       }
     }
-    for (var z = 0; z <= 26; z++) {
-      this.effBgIdle.push(this.pathBgIdle + z + ".png");
-    }
+    // for (var z = 0; z <= 26; z++) {
+    //   this.effBgIdle.push(this.pathBgIdle + z + ".png");
+    // }
   }
 
 
