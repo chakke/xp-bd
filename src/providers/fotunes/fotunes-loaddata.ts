@@ -11,4 +11,8 @@ export class FotunesLoadData {
         return this.http.get("./assets/fotunes/data/data.json")
         .map((res: any) => res.json());
     }
+    getDataDetailFROMJSON(){
+        return this.http.get("./assets/fotunes/data/ft_detail.json")
+        .map((res: any) => res.json());
+    }
 }

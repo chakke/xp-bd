@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Fotunes } from '../../providers/class/fotunes';
+import { FotunesDetail } from '../../providers/class/fotunes-detail';
+import { FotunesModule } from '../../providers/fotunes/fotunes';
 
 /**
  * Generated class for the FotuneDetailPage page.
@@ -17,9 +19,13 @@ import { Fotunes } from '../../providers/class/fotunes';
 export class FotuneDetailPage {
   resultLines: string[] = [];
   fotune  : Fotunes;
+  fotuneDataDetail : FotunesDetail;
   isLoading: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private mAppModule: FotunesModule,
+    public navCtrl: NavController, public navParams: NavParams) {
     this.fotune = new Fotunes();
+    this.fotuneDataDetail = new FotunesDetail();
     for(let i = 0;i<6;i++){
       this.resultLines.push("./assets/image/line_bg.png");
     }
@@ -47,5 +53,14 @@ export class FotuneDetailPage {
   }
   closeView(){
     this.navCtrl.pop();
+  }
+  viewDetail(){
+    this.fotuneDataDetail.setID(this.fotune.id);
+    this.mAppModule.updateDataDetail(this.fotuneDataDetail);
+    this.navCtrl.push("FotunesDataDetailsPage",{
+      resultLines : this.resultLines,
+      fotune: this.fotune,
+      fotuneDetail : this.fotuneDataDetail
+    });
   }
 }

@@ -64,9 +64,9 @@ export class FotuneHomePage {
     this.resetResult();
   }
   resetResult() {
+    this.fotune.setDefault();
     this.numberQue = 1;
     this.idResult = "";
-    this.fotune = new Fotunes();
     this.isTransition = false;
     this.isRunShuffe = false;
     this.isShuffer6 = false;
@@ -176,11 +176,13 @@ export class FotuneHomePage {
   isRunFirstView: boolean = false;
   numberQue: number = 1;
   shuffSkeleton() {
+    // giải đoán
     if (this.isShowResult) {
       this.navCtrl.push("FotuneDetailPage", {
         fotune: this.fotune,
-        resultLines: this.resultLines
+        resultLines: this.resultLines.reverse()
       });
+      this.mAppModule.mAdsManager.showInterstital(true);
       // this.resetResult();
       return;
     }
@@ -243,8 +245,8 @@ export class FotuneHomePage {
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-      xPosition = this.getPosition([36,56,16]);
-      yPosition = this.getPosition([23,33,43]);
+      xPosition = this.getPosition([30,50,10]);
+      yPosition = this.getPosition([10,30,50]);
       for (let i = 0; i < coinElements.length; i++) {
         let element = <HTMLElement>coinElements[i];
         element.style.transform = "translate(" + xPosition[i] + "px" + "," + yPosition[i] + "px" + ")";

@@ -6,7 +6,7 @@ export class AdsManager {
 
     mTimeCheck: number = 0;
 
-    mAdsEnable: boolean = false;
+    mAdsEnable: boolean = true;
 
     public setAdmobFree(admobFree: AdMobFree) {
         if (!this.mAdsEnable) return;

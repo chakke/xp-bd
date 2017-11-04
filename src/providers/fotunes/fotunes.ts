@@ -6,6 +6,8 @@ import { Fotunes } from '../class/fotunes';
 import { AnalyticsManager } from '../common/analytics-manager';
 import { HttpService } from '../http-service';
 import { AppConfig } from '../app-config';
+import { FotunesDetail } from '../class/fotunes-detail';
+import { AdsManager } from '../common/ads-manager';
 
 /*
   Generated class for the FotunesProvider provider.
@@ -17,16 +19,18 @@ import { AppConfig } from '../app-config';
 export class FotunesModule{
   mFotuneLoadData: FotunesLoadData;
   public mAnalyticsManager: AnalyticsManager;
+  public mAdsManager: AdsManager;
   fortunesData = new Array<Fotunes>();
+  fotunesDataDetail = new Array<FotunesDetail>();
   isOnMobileDevice : boolean = true;
   private mConfig: AppConfig;
   private mAudio: HTMLAudioElement; 
   constructor(
     private mHttpService: HttpService,
     public http: Http) {
-    
     this.mFotuneLoadData = new FotunesLoadData(this.http);
     this.mAnalyticsManager = new AnalyticsManager();
+    this.mAdsManager = new AdsManager();  
     this.mConfig = new AppConfig();
     this.mAudio = new Audio();
   }
@@ -50,8 +54,28 @@ export class FotunesModule{
 
   }
 
+  getDataDetailFROMJSON(){
+    
+    return new Promise((resolve, reject) => {
+      if (this.fotunesDataDetail.length>0){
+        resolve(this.fotunesDataDetail);
+      } 
+      else {
+        this.mFotuneLoadData.getDataDetailFROMJSON().subscribe((data) => {
+          if(data){
+            data.forEach(element => {
+              this.fotunesDataDetail.push(new FotunesDetail(element));
+            });
+            resolve(this.fotunesDataDetail);
+          }else{
+            resolve(false);
+          }
+        });
+      }
+    });
+  }
+
   getDataFROMJSON(){
-    console.log("get data from json");
     
     return new Promise((resolve, reject) => {
       if (this.fortunesData.length>0){
@@ -70,6 +94,35 @@ export class FotunesModule{
         });
       }
     });
+  }
+
+  updateDataDetail(fotuneDetail : FotunesDetail){
+
+    if (this.fotunesDataDetail.length > 0) {
+      for (var index = 0; index < this.fotunesDataDetail.length; index++) {
+        var element = this.fotunesDataDetail[index];
+        if(fotuneDetail.Id == element.Id){
+          fotuneDetail.updateINFO(element);
+          return fotuneDetail;
+        }
+      }
+      return false;
+    } else {
+      return this.getDataDetailFROMJSON().then((res: any)=>{
+        if(res){
+          for (var index = 0; index < res.length; index++) {
+            var element = res[index];
+            if(fotuneDetail.Id == parseInt(element.Id)){
+              fotuneDetail.updateINFO(element);
+              return fotuneDetail;
+            }
+          }
+        }else{
+          return false;
+        }
+      }).catch(err=>{return err;});
+    }
+
   }
 
   updateINFO(fotune : Fotunes){

@@ -5,6 +5,7 @@ import { AppModule } from "../../providers/app-module";
 import { AppController } from "../../providers/app-controller";
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { FotuneHomePage } from '../fotune-home/fotune-home';
+import { AdMobFree } from "@ionic-native/admob-free";
 /**
  * Generated class for the FotuneLoadingPage page.
  *
@@ -20,6 +21,7 @@ import { FotuneHomePage } from '../fotune-home/fotune-home';
 export class FotuneLoadingPage {
 
   constructor(
+    public mAdmobfree: AdMobFree,
     private mAppModule: FotunesModule,
     public mGoogleAnalytics: GoogleAnalytics,
     private mPlatform: Platform,
@@ -29,6 +31,7 @@ export class FotuneLoadingPage {
   ionViewDidEnter() {
     AppController.getInstance().setPlatform(this.mPlatform);
     this.mAppModule.isOnMobileDevice = AppController.getInstance().isOnMobileDevice();
+    this.mAppModule.mAdsManager.setAdmobFree(this.mAdmobfree);
     this.mAppModule.mAnalyticsManager.setGoogleAnalytics(this.mGoogleAnalytics);
     this.mAppModule.loadConfig().then(
       () => {

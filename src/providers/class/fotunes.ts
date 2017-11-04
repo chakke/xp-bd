@@ -15,6 +15,15 @@ export class Fotunes {
   more: string;
   imageSrc: string;
   constructor(opts?: any) {
+    this.setDefault();
+    if(opts){
+      this.parseData(opts);
+    }
+  }
+  setID(id: number){
+    this.id = id;
+  }
+  setDefault(){
     this.name = "name";
     this.nameInVN = "name in vn (name in viet nam)";
     this.id = 0;
@@ -28,12 +37,6 @@ export class Fotunes {
     };
     this.more = "more";
     this.imageSrc = "./assets/image/text/text_0.png";
-    if(opts){
-      this.parseData(opts);
-    }
-  }
-  setID(id: number){
-    this.id = id;
   }
   copy(fotune: Fotunes){
     this.name = fotune.name;

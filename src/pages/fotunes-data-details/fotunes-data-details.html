@@ -1,0 +1,126 @@
+<ion-header>
+    <div class="a1-relative" style="height: 56px">
+        <div class="head-container a3-container a3-justify-between">
+            <div class="line-container">
+                <div class="line" *ngFor="let image of resultLines">
+                    <img src="{{image}}">
+                </div>
+            </div>
+            <div class="text-container a3-container-center">
+                <img src="{{fotune.imageSrc}}">
+            </div>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content>
+    <div class="a1-container" style=" overflow: hidden;">
+        <div class="frame-background">
+            <img src="assets/image/frame_1.png">
+        </div>
+        <div style="height: 5%"></div>
+        <div class="data-content-div a1-relative">
+            <div style="height: 60px">
+                <div class="nameInVn" text-center>
+                    <span class="span-1"> <span>{{fotune.nameInVN.slice(0,1).toUpperCase()}}</span>{{fotune.nameInVN.split('(')[0].substring(1).toLowerCase()}}</span>
+                </div>
+                <div class="nameInVn" text-center>
+                    <span class="span-2">( {{fotune.nameInVN.split('(')[1].replace(")", "")}} )</span>
+                </div>
+            </div>
+            <div class="div-container-detail">
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 1</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[5]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h1}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 2</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[4]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h2}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 3</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[3]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h3}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 4</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[2]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h4}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 5</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[1]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h5}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Hào 6</span></div>
+                        <div class="box-image a3-container-center"><img src="{{resultLines[0]}}"></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.h6}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Ý Nghĩa</span></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.means}}</p>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div class="box-header-container a3-container a1-relative">
+                        <div class="box-title"><span>Bài học</span></div>
+                    </div>
+                    <div class="box-content">
+                        <p>{{fotunesDetail.lessons}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <div class="height-56 a1-relative a3-container a3-justify-between">
+        <div class="btn">
+            <div class="btn-more">
+                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi"> <img src="assets/image/btn_more_1.png"></a>
+            </div>
+        </div>
+        <div style="width: 60%" class="a1-container">
+            <div class="btn-back" (click)="closeView()">
+                <img src="assets/image/btn_back_2.png">
+            </div>
+        </div>
+        <div class="btn">
+            <div class="btn-facebook ">
+                <a href="https://www.facebook.com/groups/123547708286399/"><img src="assets/image/btn_facebook_1.png"></a>
+            </div>
+        </div>
+        <div class="bot_bar"></div>
+    </div>
+</ion-footer>
