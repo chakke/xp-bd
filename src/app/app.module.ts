@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { Media} from '@ionic-native/media';
 import { FotuneHomePage } from '../pages/fotune-home/fotune-home';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { AdMobFree } from '@ionic-native/admob-free';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,6 +38,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     HttpService,
     DeviceInfoProvider,
     GoogleAnalytics,
+    AdMobFree,
     Media
   ]
 })
