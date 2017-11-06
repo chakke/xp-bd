@@ -1,175 +1,171 @@
-<ion-content class="background-image">
-    <div class="button-info" (click)="viewInfo()">
-        <img src="assets/image/btn_info_1.png">
-    </div>
-    <div class="text-idle height-56">
-        <div class="animate-text" text-center>
-            <div class="sprite-container">
-                <!-- eff-text-idle-animate -->
-                <div class="sprite-animation eff-text-idle-animate">
-                    <div class="sprite-image" *ngFor="let image of effText">
-                        <img src="{{image}}">
-                    </div>
-                </div>
-            </div>
+<ion-content class="background-image" no-bounce>
+
+  <div class="button-info" tappable (click)="viewInfo()">
+    <img src="assets/image/btn_info_1.png">
+  </div>
+
+
+
+  <div class="a-page-title a3-container-center">
+    <div class="a-page-title-effect">
+      <div class="sprite-container">
+        <div class="sprite-animation eff-text-idle-animate">
+          <div class="sprite-image" *ngFor="let image of effText">
+            <img src="{{image}}">
+          </div>
         </div>
-        <div class="text-show">
-            <div class="text-show-container">
-                <img src="{{fotune.imageSrc}}" class="img-text">
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="fotunesHome-container">
-        <div class="a1-container">
-            <div class="a1-height-20 a1-relative">
-                <div style="height: 26px"></div>
-                <div class="eff-rs-end-bg hideDiv" [class.showDiv]="isShuffer6">
-                    <div class="sprite-container">
-                        <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation " [class.eff-rs-end-animate]="isShuffer6">
-                            <div class="sprite-image" *ngFor="let image of resultEndPath">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [class.showDiv]="isShuffer6" -->
-                <div class="eff-rs-bg">
-                    <div class="sprite-container">
-                        <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation eff-rs-start-animate">
-                            <div class="sprite-image" *ngFor="let image of resultStartPath">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="frame-effect hideDiv">
-                    <div class="frame-effct-container">
-                        <img src="assets/image/frame_effect.png">
-                    </div>
-                </div>
-                <div class="line-show a1-relative">
-                    <div class="line" id="line1">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line2">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line3">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line4">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line5">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line6">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                </div>
+    <img src="{{fotune.imageSrc}}" class="img-text">
+  </div>
+
+
+  <div class="fotunesHome-container">
+    <div class="a1-container">
+      <div class="a1-height-20 a1-relative">
+
+        <div class="eff-rs-end-bg hideDiv" [class.showDiv]="isShuffer6">
+          <div class="sprite-container">
+            <div class="sprite-animation " [class.eff-rs-end-animate]="isShuffer6">
+              <div class="sprite-image" *ngFor="let image of resultEndPath">
+                <img src="{{image}}">
+              </div>
             </div>
-            <div class="a1-height-60 a1-relative a3-container-center ">
-                <div class="skeleton-background"></div>
-                <!-- <div class="eff-bg">
-                    <div class="sprite-container">
-                        <div class="sprite-animation " [class.eff-bg-animate]="!isShuffer6">
-                            <div class="sprite-image" *ngFor="let image of effBgIdle">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="skeleton-show" [class.hideDiv]="isRunShuffe">
-                    <div class="skeleton-plate-background a3-container-center a1-relative" text-center>
-                        <div class="coins-container">
-                            <div class="a1-container">
-                                <div class="coin">
-                                    <img src="{{coins[0]}}">
-                                </div>
-                                <div class="coin">
-                                    <img src="{{coins[1]}}">
-                                </div>
-                                <div class="coin">
-                                    <img src="{{coins[2]}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skeleton-plate-cover a1-relative" id="skeletonCover"></div>
-                    </div>
-                </div>
-                <div class="skeleton-animate hideDiv" [class.showDiv]="isRunShuffe">
-                    <div class="sprite-container">
-                        <!-- run-skeleton-animate -->
-                        <div class="sprite-animation" [class.run-skeleton-animate]="isRunShuffe">
-                            <div class="sprite-image" *ngFor="let image of skeletonPath">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="a1-height-20 a1-relative">
-                <div class="btn-animate hideDiv" [class.showDiv]="isShuffer6">
-                    <div class="sprite-container">
-                        <!-- btn-animate-idle -->
-                        <div class="sprite-animation btn-animate-idle">
-                            <div class="sprite-image" *ngFor="let image of effBtn">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn-show" [class.hideDiv]="isShuffer6">
-                    <div class="hao" text-center> <span>Hào</span> <span>{{numberQue}}</span></div>
-                    <div class="btn-show-container" text-center (click)="shuffSkeleton()">
-                        <img src="assets/image/btn_done_2.png">
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="eff-rs-bg">
+          <div class="sprite-container">
+            <div class="sprite-animation eff-rs-start-animate">
+              <div class="sprite-image" *ngFor="let image of resultStartPath">
+                <img src="{{image}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-effect hideDiv">
+          <div class="frame-effct-container">
+            <img src="assets/image/frame_effect.png">
+          </div>
+        </div>
+        <div class="line-show a1-relative">
+          <div class="line" id="line1">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+          <div class="line" id="line2">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+          <div class="line" id="line3">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+          <div class="line" id="line4">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+          <div class="line" id="line5">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+          <div class="line" id="line6">
+            <img src="assets/image/line_bg.png" class="line-bg">
+            <img src="assets/image/line_dynamic_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_0_1.png" class="line-active">
+            <img src="assets/image/line_normal_1_1.png" class="line-active">
+            <img src="assets/image/line_dynamic_1_1.png" class="line-active">
+          </div>
+        </div>
+      </div>
+      <div class="a1-height-60 a1-relative a3-container-center ">
+        <div class="skeleton-background"></div>
+        <div class="skeleton-show" [class.hideDiv]="isRunShuffe">
+          <div class="skeleton-plate-background a3-container-center a1-relative" text-center>
+            <div class="coins-container">
+              <div class="a1-container">
+                <div class="coin">
+                  <img src="{{coins[0]}}">
+                </div>
+                <div class="coin">
+                  <img src="{{coins[1]}}">
+                </div>
+                <div class="coin">
+                  <img src="{{coins[2]}}">
+                </div>
+              </div>
+            </div>
+            <div class="skeleton-plate-cover a1-relative" id="skeletonCover"></div>
+          </div>
+        </div>
+        <div class="skeleton-animate hideDiv" [class.showDiv]="isRunShuffe">
+          <div class="sprite-container">
+            <div class="sprite-animation" [class.run-skeleton-animate]="isRunShuffe">
+              <div class="sprite-image" *ngFor="let image of skeletonPath">
+                <img src="{{image}}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="a1-height-20 a1-relative">
+        <div class="btn-animate hideDiv" [class.showDiv]="isShuffer6">
+          <div class="sprite-container">
+            <div class="sprite-animation btn-animate-idle">
+              <div class="sprite-image" *ngFor="let image of effBtn">
+                <img src="{{image}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-show" [class.hideDiv]="isShuffer6">
+          <div class="hao" text-center>
+            <span>Hào</span>
+            <span>{{numberQue}}</span>
+          </div>
+          <div class="btn-show-container" text-center tappable (click)="shuffSkeleton()">
+            <img src="assets/image/btn_done_2.png">
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
 </ion-content>
 <ion-footer>
-    <div class="height-56 bot-bar-background a1-relative a3-container a3-justify-between">
-        <div class="btn">
-            <div class="btn-more">
-                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi"> <img src="assets/image/btn_more_2.png"></a>
-            </div>
-        </div>
-        <div class="title a3-container-center" text-center>
-            <span>Gieo liên tục <span style="color: yellow">6 lần</span> để hoàn thành 1 quẻ Bói Dịch</span>
-        </div>
-        <div class="btn">
-            <div class="btn-facebook">
-                <a href="https://www.facebook.com/groups/123547708286399/"> <img src="assets/image/btn_facebook_2.png"></a>
-            </div>
-        </div>
-        <div class="bot_bar"></div>
+  <div class="a-footer a1-relative">
+    <div class="footer-button btn-more">
+      <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi">
+        <img src="assets/image/btn_more_2.png">
+      </a>
     </div>
+    <div class="footer-title">
+
+      Gieo liên tục
+      <span style="color: yellow"> 6 lần</span> để hoàn thành 1 quẻ Bói Dịch
+
+    </div>
+    <div class="footer-button btn-facebook">
+
+      <a href="https://www.facebook.com/groups/123547708286399/">
+        <img src="assets/image/btn_facebook_2.png">
+      </a>
+
+    </div>
+    <div class="bot_bar"></div>
+  </div>
 </ion-footer>
