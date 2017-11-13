@@ -1,5 +1,5 @@
 import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
-
+import { AppController } from "../app-controller";
 export class AdsManager {
 
     mAdmobFree: AdMobFree;
@@ -18,6 +18,13 @@ export class AdsManager {
     }
 
     public load() {
+        if (AppController.getInstance().isAndroid()) {
+            console.log("Load Ads for android");
+            this.loadAndroid();
+        } else if (AppController.getInstance().isIOS()) {
+            console.log("Load Ads for ios");
+            this.loadIOS();
+        }
 
     }
 

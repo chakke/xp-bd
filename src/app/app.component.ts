@@ -7,14 +7,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = "FotuneLoadingPage";
+  rootPage: any = "FotuneLoadingPage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      // statusBar.styleDefault();
-      statusBar.backgroundColorByHexString("#310000");
+      statusBar.styleLightContent();
       splashScreen.hide();
     });
   }
