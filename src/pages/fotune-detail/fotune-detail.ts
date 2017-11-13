@@ -21,15 +21,32 @@ export class FotuneDetailPage {
   fotune  : Fotunes;
   fotuneDataDetail : FotunesDetail;
   isLoading: boolean = false;
+  heightLine : string = "5px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
     this.fotune = new Fotunes();
     this.fotuneDataDetail = new FotunesDetail();
     for(let i = 0;i<6;i++){
-      this.resultLines.push("./assets/image/line_bg.png");
+      this.resultLines.push("./assets/fotunes/image/line_bg.png");
     }
     this.loadParams();
+    let screenHeight = screen.height;
+    if(screenHeight < 600){
+      this.heightLine = "5px";
+    }
+    else if(screenHeight > 600 && screenHeight < 700){
+      this.heightLine = "6px";
+    }
+    else if(screenHeight > 700 && screenHeight < 800){
+      this.heightLine = "7px";
+    }
+    else if(screenHeight > 1000 && screenHeight < 1100){
+      this.heightLine = "14px";
+    }
+    else if(screenHeight > 1300){
+      this.heightLine = "18px";
+    }
   }
 
   // ionViewDidEnter() {

@@ -16,63 +16,94 @@ page-fotunes-data-details {
             height: 100%;
         }
     }
-    .data-content-div {
-        height: 88%;
-        width: 90%;
-        margin: auto;
+    .detailPage-container {
+        line-height: unset;
         overflow: hidden;
-        .nameInVn {
+        .frame_1 {
             width: 100%;
-            height: 30px;
-            padding-bottom: 5px;
-            padding-top: 6px;
-            .span-1 {
-                color: white;
-                font-weight: bold;
-                font-size: 1.3rem;
-                // text-transform: lowercase;
-            }
-            .span-2 {
-                color: #fff255;
-                font-size: 1.2rem;
-                // font-family: 'Mijas-Ultra'!important;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            z-index: -1;
+            img {
+                height: 100%;
+                width: 100%;
             }
         }
-        .div-container-detail {
-            height: calc(100% - 60px);
-            width: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-            overflow: scroll;
-            .box-container {
-                background: rgba(black, 0.2);
-                min-height: 80px;
-                border-radius: 10px;
+        .divContent {
+            width: 92%;
+            margin: auto;
+            margin-top: 8%;
+            height: 86%;
+            overflow: hidden;
+            // opacity: 0;
+            .nameInVn {
                 width: 100%;
-                margin-bottom: 10px;
-                .box-content {
-                    p {
-                        color: white;
-                        font-size: 1.4rem;
-                        padding: 10px;
-                    }
+                height: 7%;
+                .span-1 {
+                    color: white;
+                    font-size: 5.5vw;
+                    font-family: "Mijas-Ultra" !important;
+                    // text-transform: lowercase;
                 }
-                .box-header-container {
-                    padding: 10px;
-                    height: 20px;
-                    .box-title {
-                        height: 20px;
-                        width: 30%;
+                .span-2 {
+                    color: #fff255;
+                    font-size: 4vw;
+                    font-family: "Mijas-Ultra" !important;
+                }
+            }
+            .attribute-container {
+                overflow: scroll;
+                padding: 10px;
+                height: 90%;
+                .attribute-item {
+                    background: rgba(black, 0.2);
+                    width: 94%;
+                    margin: auto;
+                    margin-bottom: 16px;
+                    min-height: 80px;
+                    border-radius: 5px;
+                    padding: 5px;
+                    .attribute-name {
                         span {
-                            color: #fff255;
-                            font-weight: bold;
-                            font-size: 1.4rem;
+                            color: rgb(255, 243, 101);
+                            font-size: 1.8rem;
+                            font-family: "Mijas-Ultra" !important;
+                            img {
+                                max-width: 50%;
+                            }
                         }
                     }
-                    .box-image {
-                        height: 20px;
-                        width: 30%;
-                        padding: 4px;
+                    .attribute-content {
+                        p {
+                            margin: 0;
+                            padding: 4px;
+                            color: white;
+                            font-family: Mijas-Pro-Italic !important;
+                            white-space: pre-wrap;
+                        }
+                        .uh-row {
+                            margin-top: 10px;
+                            .uh-title {
+                                width: 25%;
+                                span {
+                                    color: #fff255;
+                                    font-family: Mijas-Pro-Italic !important;
+                                    padding: 5px;
+                                }
+                            }
+                            .uh-content {
+                                width: 75%;
+                                span {
+                                    padding: 5px;
+                                    color: white;
+                                    font-family: Mijas-Pro-Italic !important;
+                                    white-space: pre-wrap;
+                                    text-align: justify;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -91,75 +122,126 @@ page-fotunes-data-details {
         height: 56px;
     }
     .btn {
-        height: 56px;
-        width: 20%;
         position: relative;
-        .btn-more {
+        img {
+            max-width: 80%;
+            position: absolute;
+        }
+    }
+    .notice {
+        padding-bottom: 5px;
+    }
+    ion-fab {
+        left: 0;
+        bottom: 0;
+        .btn-fab {
+            opacity: 0;
+        }
+        .item-fab-1 {
             img {
                 position: absolute;
-                bottom: 4px;
-                left: 0;
-                height: 45px;
+            }
+            .img-info-active {
+                display: none;
             }
         }
-        .btn-facebook {
+        .item-fab-1:active {
+            .img-info-active {
+                display: block;
+            }
+        }
+        .item-fab-2 {
             img {
                 position: absolute;
-                bottom: 4px;
-                right: 0;
-                height: 45px;
+            }
+            .img-game-active {
+                display: none;
+            }
+        }
+        .item-fab-2:active {
+            .img-game-active {
+                display: block;
             }
         }
     }
-    .bot_bar {
-        position: absolute;
+    .more-button {
+        img {
+            left: 0;
+            bottom: 0;
+        }
+        .img-more-active {
+            display: none;
+        }
+    }
+    .more-button:active {
+        .img-more-active {
+            display: block;
+        }
+    }
+    .facebook-button {
+        img {
+            right: 0;
+            bottom: 0;
+        }
+        .img-facebook-active {
+            display: none;
+        }
+    }
+    .facebook-button:active {
+        .img-facebook-active {
+            display: block;
+        }
+    }
+    .notice {
+        .btn-back {
+            img {
+                max-width: 60%;
+            }
+            .btn-back-active {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+        }
+        .btn-back:active {
+            .btn-back-active {
+                position: absolute;
+                display: block;
+            }
+        }
+    }
+    .botbar1 {
         left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 5px;
+        bottom: -1px;
+        height: 4px;
         z-index: -1;
+        width: 100%;
         background-position: center center;
         background-size: cover;
-        background-image: url("../assets/image/bot_bar_1.png");
+        background-image: url("../assets/fotunes/image/bot_bar_1.png");
     }
     .head-container {
         background: rgba(black, 0.2);
         width: 70%;
-        height: 56px;
         margin: auto;
         margin-top: 20px;
         border-radius: 5px;
         .line-container {
             width: 20%;
-            height: 56px;
             padding-left: 10px;
+            line-height: unset;
             .line {
-                height: 6px;
-                padding: 3px;
+                position: relative;
                 img {
-                    // height: 8px;
+                    max-width: 80%;
                 }
             }
         }
         .text-container {
             width: 80%;
-            height: 56px;
             padding: 5px;
-            img {
-                height: 56px;
-                width: 120%;
-                max-width: 120%;
-            }
-        }
-    }
-    .btn-back {
-        width: 60%;
-        top: -30px;
-        position: absolute;
-        left: 20%;
-        img {
-            height: 100%;
-            width: 100%;
+            img {}
         }
     }
 }

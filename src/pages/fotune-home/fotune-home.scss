@@ -1,287 +1,290 @@
 page-fotune-home {
-    $height-header: 45px;
     $line-width: 60px;
     $width-image: 160px;
     $coin-width: 30px;
     $eff-bg-width: 360px;
     $eff-btn-width: 160px;
     $eff-text-width: 100%;
+    $plate-max-width: 160px;
+    $skeleton-background-max-width: 280px;
     ion-content {
+        padding-top: 20px !important;
         background-image: url("../assets/image/background.png");
     }
-    .hideDiv {
-        opacity: 0;
-    }
-    .showDiv {
-        opacity: 1;
-    }
-    .bot-bar-background {
-        background-position: center center;
-        background-size: cover;
-        background-image: url("../assets/image/bot_bar_2.png");
-    }
-    .height-56 {
-        height: 56px;
-    }
-    .btn {
-        height: 56px;
-        width: 15%;
-        position: relative;
-        .btn-more {
-            img {
-                position: absolute;
-                bottom: 3px;
-                left: 0;
-            }
-        }
-        .btn-facebook {
-            img {
-                position: absolute;
-                bottom: 3px;
-                right: 0;
-            }
-        }
-    }
-    .title {
-        width: 70%;
-        line-height: unset;
-        span {
-            color: white;
-            font-weight: bold;
-            font-size: 3.5vw;
-            white-space: nowrap;
-        }
-    }
-    .bot_bar {
+    .a-page-underground {
         position: absolute;
         left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 3px;
-        background-position: center center;
-        background-size: cover;
-        background-image: url("../assets/image/bot_bar_1.png");
-    }
-    .button-info {
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        width: 56px;
-        height: 56px;
-        padding: 10px;
-        z-index: 10;
-        img {}
-    }
-    .sprite-container {
+        top: 0;
         height: 100%;
         width: 100%;
-        overflow: hidden;
-        .sprite-animation {
-            height: 100%;
-            width: 100%;
-            white-space: nowrap;
-            line-height: unset;
-            .sprite-image {
-                height: 100%;
-                width: 100%;
-                display: inline-block;
-                img {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
+        z-index: -1;
+        .large-circle {
+            max-width: 80%;
+            animation: rotate-360 12s steps(108) infinite;
         }
-    }
-    .text-idle {
-        .animate-text {
-            height: 90px;
-            width: 120%;
-            position: absolute;
-            top: 5px;
-            left: -10%;
-            z-index: -1;
+        .small-circle {
+            width: 60%;
+            img {}
         }
-        .text-show {
-            height: 56px;
-            .text-show-container {
-                height: 100%;
-                text-align: center;
-                position: relative;
-                .img-background {
-                    height: 90px;
-                    width: 100%;
-                    position: absolute;
-                    top: 5px;
-                    left: 0;
-                    z-index: -1;
-                }
-                .img-text {
-                    position: absolute;
-                    top: 30px;
-                    left: 10%;
-                    width: 80%;
-                    // z-index: -1;
-                    // height: 100%;
-                }
-            }
-        }
-    }
-    .fotunesHome-container {
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        bottom: 0px;
-        // overflow: scroll;
-        .btn-animate {
-            position: absolute;
-            top: -12px;
-            width: 50%;
-            left: 25%;
-            height: 85px;
-            padding-left: 6px;
-            padding-right: 7px;
-        }
-        .btn-show {
-            position: relative;
-            .hao {
+        .plate-coin {
+            width: 80px;
+            height: 80px;
+            .coin {
+                width: 30px;
+                height: 28px;
+                z-index: -1;
                 position: absolute;
-                top: 2px;
+                top: 0;
                 left: 0;
-                width: 100%;
-                height: 20px;
-                color: white;
-            }
-            .btn-show-container {
-                width: 50%;
-                height: 80px;
-                padding-bottom: 10px;
-                margin: auto;
                 img {
-                    height: 100%;
+                    width: 28px;
+                    height: 28px;
                 }
             }
         }
-        .eff-bg {
-            width: 320px;
-            height: 320px;
-            opacity: 0.6;
-        }
-        .eff-rs-bg {
-            width: 50%;
-            height: 160%;
-            position: absolute;
-            top: -10px;
-            left: 25%;
-            z-index: -1;
-        }
-        .eff-rs-end-bg {
-            width: 70%;
-            height: 220%;
-            position: absolute;
-            top: -40px;
-            left: 15%;
-            z-index: -1;
-        }
-        .frame-effect {
-            width: 50%;
-            top: -20px;
-            z-index: -1;
-            left: 25%;
-            position: absolute;
-            .frame-effect-container {
-                img {}
+        .plate {
+            img {
+                max-width: 90%;
             }
         }
-        .line-show {
-            margin: auto;
-            width: 100px;
-            .line {
-                width: 100%;
-                height: 12px;
-                position: relative;
-                img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-                .line-bg {
-                    width: 66px;
-                    height: 6px;
-                    top: 6px;
-                    left: 17px;
-                    opacity: 1;
-                }
-                .line-active {
-                    width: 76px;
-                    height: 16px;
-                    left: 12px;
-                    opacity: 0;
-                }
-            }
+        #skeletonCover {
+            transition: 800ms;
+            max-width: 90%;
         }
-        .skeleton-animate {
-            width: 160px;
-            height: 160px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+    }
+    .a-page-title {
+        width: 100%;
+        position: relative;
+        padding: 10px 0px;
+        margin-top: 10px;
+        img {
+            max-width: 80%;
+            z-index: 10;
         }
-        .skeleton-background {
-            position: absolute;
-            z-index: -1;
-            left: 0;
-            top: 0;
+        .a-page-title-effect {
             width: 100%;
             height: 100%;
-            background-image: url("../assets/image/frame/eff_bg-idle_0.png");
-            background-position: center center;
-            background-size: cover;
-            opacity: 0.5;
-        }
-        .skeleton-show {
-            width: 160px;
-            height: 160px;
             position: absolute;
-            top: 50%;
             left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%) scale(1.4);
+            transform-origin: center;
+        }
+    }
+    .a-page-result {
+        width: 100%;
+        position: relative;
+        .a-page-result-effect {
+            // height: 100%;/
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 50%;
             transform: translate(-50%, -50%);
-            overflow: visible;
-            .skeleton-plate-background {
-                width: 160px;
-                height: 160px;
-                background-image: url("../assets/image/plate.png");
-                background-position: center center;
-                background-size: cover;
-                .coins-container {
-                    height: 100px;
-                    width: 100px;
-                    line-height: unset;
+            transform-origin: center;
+        }
+        .a-page-line-container {
+            width: 50%;
+            .line {
+                position: relative;
+                .img-normal {
+                    max-width: 38%;
                     position: absolute;
-                    top: 30px;
-                    left: 30px;
-                    // z-index: -1;
-                    .coin {
-                        height: 30px;
-                        width: 30px;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        img {
-                            height: 30px;
-                            width: 30px;
-                        }
-                    }
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    transition: 1s;
+                    // opacity: 0;
                 }
             }
-            .skeleton-plate-cover {
-                width: 160px;
-                height: 160px;
-                background-image: url("../assets/image/plate_cover.png");
-                background-position: center center;
-                background-size: cover;
-                transition: 800ms;
+            .line-white {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                text-align: center;
+                img {
+                    max-width: 38%;
+                    animation: eff-rs-end 1s;
+                }
+            }
+        }
+        .image-background {
+            z-index: -1;
+            width: 42%;
+        }
+    }
+    .btn-shuffer-effect {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        z-index: -1;
+        .sprite-container .sprite-animation .sprite-image img {
+            width: unset;
+        }
+    }
+    .btn-shuffer {
+        padding: 5px;
+        bottom: 50px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        .btn-done-active {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        }
+        .btn_done_1 {
+            width: 50%;
+            img {
+                // max-width: 45%;
+            }
+            .numberQue {
+                position: absolute;
+                left: 50%;
+                top: 16%;
+                transform: translateX(-50%);
+                span {
+                    color: white;
+                    font-size: 4vw;
+                    font-family: "Mijas-Ultra" !important;
+                }
+            }
+        }
+        .btn_done_1:active {
+            .btn-done-active {
+                display: block;
+            }
+        }
+    }
+    .background-footer {
+        background-position: center center;
+        background-size: cover;
+        background-image: url("../assets/fotunes/image/bot_bar_2.png");
+    }
+    .height-footer {
+        height: 50px;
+    }
+    .btn {
+        position: relative;
+        img {
+            max-width: 60px;
+            position: absolute;
+        }
+    }
+    ion-fab {
+        left: 0;
+        bottom: 0;
+        .btn-fab {
+            opacity: 0;
+        }
+        .item-fab-1 {
+            img {
+                position: absolute;
+                left: 0;
+            }
+            .img-info-active {
+                display: none;
+            }
+        }
+        .item-fab-1:active {
+            .img-info-active {
+                display: block;
+            }
+        }
+        .item-fab-2 {
+            img {
+                position: absolute;
+                left: 0;
+            }
+            .img-game-active {
+                display: none;
+            }
+        }
+        .item-fab-2:active {
+            .img-game-active {
+                display: block;
+            }
+        }
+    }
+    .more-button {
+        img {
+            left: 0;
+            bottom: 0;
+        }
+        .img-more-active {
+            display: none;
+        }
+    }
+    .more-button:active {
+        .img-more-active {
+            display: block;
+        }
+    }
+    .facebook-button {
+        img {
+            right: 0;
+            bottom: 0;
+        }
+        .img-facebook-active {
+            display: none;
+        }
+    }
+    .facebook-button:active {
+        .img-facebook-active {
+            display: block;
+        }
+    }
+    .notice {
+        padding-top: 5px;
+        span {
+            color: white;
+            font-family: "Mijas-Ultra" !important;
+            line-height: 1.5rem;
+        }
+    }
+    .botbar1 {
+        left: 0;
+        bottom: -1px;
+        height: 4px;
+        z-index: -1;
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-image: url("../assets/fotunes/image/bot_bar_1.png");
+    }
+}
+
+//==============New CSS================
+.hideDiv {
+    opacity: 0;
+}
+
+.showDiv {
+    opacity: 1;
+}
+
+.sprite-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    .sprite-animation {
+        height: 100%;
+        width: 100%;
+        white-space: nowrap;
+        line-height: unset;
+        .sprite-image {
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            img {
+                height: 100%;
+                width: 100%;
             }
         }
     }

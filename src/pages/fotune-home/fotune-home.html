@@ -1,175 +1,207 @@
-<ion-content class="background-image">
-    <div class="button-info" (click)="viewInfo()">
-        <img src="assets/image/btn_info_1.png">
-    </div>
-    <div class="text-idle height-56">
-        <div class="animate-text" text-center>
+<ion-content class="background-image" no-bounce>
+    <!-- ==================under-ground================= -->
+    <div class="a-page-underground a3-container-center a1-relative">
+        <img src="assets/fotunes/image/large_circle.png" class="large-circle">
+
+        <div class="a1-content-center small-circle" text-center>
+            <img src="assets/fotunes/image/small_circle.png">
+        </div>
+        <!-- =========plate backgroung============ -->
+        <div class="a1-content-center plate" text-center [class.hideDiv]="isRunShuffe">
+            <img src="assets/fotunes/image/plate.png">
+        </div>
+        <div class="a1-content-center plate" text-center [class.hideDiv]="isRunShuffe">
+            <div class="a1-content-center plate-coin">
+                <div class="coin">
+                    <img src="{{coins[0]}}">
+                </div>
+                <div class="coin">
+                    <img src="{{coins[1]}}">
+                </div>
+                <div class="coin">
+                    <img src="{{coins[2]}}">
+                </div>
+            </div>
+            <img src="assets/fotunes/image/plate_cover.png" class="a1-relative" id="skeletonCover">
+        </div>
+        <!-- ==============plate animate============ -->
+        <div class="a1-content-center plate hideDiv" [class.showDiv]="isRunShuffe">
             <div class="sprite-container">
-                <!-- eff-text-idle-animate -->
-                <div class="sprite-animation eff-text-idle-animate">
-                    <div class="sprite-image" *ngFor="let image of effText">
+                <div class="sprite-animation " [class.run-skeleton-animate]="isRunShuffe">
+                    <div class="sprite-image" *ngFor="let image of skeletonPath">
                         <img src="{{image}}">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-show">
-            <div class="text-show-container">
-                <img src="{{fotune.imageSrc}}" class="img-text">
+
+    </div>
+
+    <div class="a-page-uper  a1-relative">
+        <!-- ===========Text============== -->
+        <div class="a-page-title a3-container-center">
+            <div class="a-page-title-effect">
+                <div class="sprite-container">
+                    <div class="sprite-animation eff-text-idle-animate ">
+                        <div class="sprite-image" *ngFor="let image of effText">
+                            <img src="{{image}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{{fotune.imageSrc}}" class="img-text">
+        </div>
+
+
+        <div class="a-page-result a3-container-center">
+            <!-- ==============line-efff=================== -->
+
+            <div class="a-page-result-effect" [style.width]="widthResulteff">
+                <div class="sprite-container">
+                    <div class="sprite-animation eff-rs-start-animate">
+                        <div class="sprite-image" *ngFor="let image of resultStartPath">
+                            <img src="{{image}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================line-height js in contructor==================== -->
+            <div class="a-page-line-container" (window:resize)="onResize()">
+                <div [style.height]="lineResultHeight" class="line " id="line6">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+                <div [style.height]="lineResultHeight" class="line " id="line5">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+                <div [style.height]="lineResultHeight" class="line " id="line4">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+                <div [style.height]="lineResultHeight" class="line " id="line3">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+                <div [style.height]="lineResultHeight" class="line " id="line2">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+                <div [style.height]="lineResultHeight" class="line " id="line1">
+                    <img src="assets/fotunes/image/line_bg.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_0_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_normal_1_1.png" class="img-normal">
+                    <img src="assets/fotunes/image/line_dynamic_1_1.png" class="img-normal">
+                    <!-- <div class="line-white">
+                        <img src="assets/fotunes/image/line_white.png">
+                    </div> -->
+
+                </div>
+            </div>
+
+            <!-- ============image-background==================== -->
+            <div class="a1-content-center image-background" text-center>
+                <img src="assets/fotunes/image/result_effect.png" class="run-rotate-360-animate" id="imgresulteff">
             </div>
         </div>
     </div>
-    <div class="fotunesHome-container">
-        <div class="a1-container">
-            <div class="a1-height-20 a1-relative">
-                <div style="height: 26px"></div>
-                <div class="eff-rs-end-bg hideDiv" [class.showDiv]="isShuffer6">
-                    <div class="sprite-container">
-                        <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation " [class.eff-rs-end-animate]="isShuffer6">
-                            <div class="sprite-image" *ngFor="let image of resultEndPath">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [class.showDiv]="isShuffer6" -->
-                <div class="eff-rs-bg">
-                    <div class="sprite-container">
-                        <!-- eff-rs-start-animate -->
-                        <div class="sprite-animation eff-rs-start-animate">
-                            <div class="sprite-image" *ngFor="let image of resultStartPath">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="frame-effect hideDiv">
-                    <div class="frame-effct-container">
-                        <img src="assets/image/frame_effect.png">
-                    </div>
-                </div>
-                <div class="line-show a1-relative">
-                    <div class="line" id="line1">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line2">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line3">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line4">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line5">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                    <div class="line" id="line6">
-                        <img src="assets/image/line_bg.png" class="line-bg">
-                        <img src="assets/image/line_dynamic_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_0_1.png" class="line-active">
-                        <img src="assets/image/line_normal_1_1.png" class="line-active">
-                        <img src="assets/image/line_dynamic_1_1.png" class="line-active">
-                    </div>
-                </div>
-            </div>
-            <div class="a1-height-60 a1-relative a3-container-center ">
-                <div class="skeleton-background"></div>
-                <!-- <div class="eff-bg">
-                    <div class="sprite-container">
-                        <div class="sprite-animation " [class.eff-bg-animate]="!isShuffer6">
-                            <div class="sprite-image" *ngFor="let image of effBgIdle">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="skeleton-show" [class.hideDiv]="isRunShuffe">
-                    <div class="skeleton-plate-background a3-container-center a1-relative" text-center>
-                        <div class="coins-container">
-                            <div class="a1-container">
-                                <div class="coin">
-                                    <img src="{{coins[0]}}">
-                                </div>
-                                <div class="coin">
-                                    <img src="{{coins[1]}}">
-                                </div>
-                                <div class="coin">
-                                    <img src="{{coins[2]}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skeleton-plate-cover a1-relative" id="skeletonCover"></div>
-                    </div>
-                </div>
-                <div class="skeleton-animate hideDiv" [class.showDiv]="isRunShuffe">
-                    <div class="sprite-container">
-                        <!-- run-skeleton-animate -->
-                        <div class="sprite-animation" [class.run-skeleton-animate]="isRunShuffe">
-                            <div class="sprite-image" *ngFor="let image of skeletonPath">
-                                <img src="{{image}}">
-                            </div>
+
+    <!-- ==========button-shuffer================= -->
+
+    <div class="btn-shuffer a1-absolute" margin-bottom>
+        <div class="a3-container-center a1-relative">
+            <div class="btn-shuffer-effect" id="btnShufferEffect">
+                <div class="sprite-container">
+                    <div class="sprite-animation btn-animate-idle">
+                        <div class="sprite-image" *ngFor="let image of effBtn">
+                            <img src="{{image}}">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="a1-height-20 a1-relative">
-                <div class="btn-animate hideDiv" [class.showDiv]="isShuffer6">
-                    <div class="sprite-container">
-                        <!-- btn-animate-idle -->
-                        <div class="sprite-animation btn-animate-idle">
-                            <div class="sprite-image" *ngFor="let image of effBtn">
-                                <img src="{{image}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn-show" [class.hideDiv]="isShuffer6">
-                    <div class="hao" text-center> <span>Hào</span> <span>{{numberQue}}</span></div>
-                    <div class="btn-show-container" text-center (click)="shuffSkeleton()">
-                        <img src="assets/image/btn_done_2.png">
-                    </div>
-                </div>
+            <div class="btn_done_1 a1-relative" (click)="shuffSkeleton()">
+                <div [class.hideDiv]="isShuffer6" class="numberQue"><span>Hào </span> <span> {{numberQue}}</span></div>
+                <img src="assets/fotunes/image/btn_done_1.png" [class.hideDiv]="isShuffer6">
+                <img src="assets/fotunes/image/btn_done_2.png" [class.hideDiv]="isShuffer6" class="btn-done-active">
             </div>
         </div>
     </div>
+
+
+    <!-- ===============Bottom bar================ -->
+    <div class="a1-container-bottom">
+        <div class="background-footer height-footer a3-container a1-relative a1-z-10">
+            <div class="a1-absolute botbar1"></div>
+            <ion-fab>
+                <button ion-fab class="btn-fab">
+                    <ion-icon name="arrow-dropleft"></ion-icon>
+                </button>
+                <ion-fab-list side="top">
+                    <div ion-fab class="item-fab-1" (click)="viewInfo()">
+                        <img src="assets/fotunes/image/btn_info_1.png" alt="">
+                        <img src="assets/fotunes/image/btn_info_2.png" class="img-info-active">
+                    </div>
+                    <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi">
+                        <div ion-fab class="item-fab-2">
+                            <img src="assets/fotunes/image/btn_game_1.png" alt="">
+                            <img src="assets/fotunes/image/btn_game_2.png" class="img-game-active">
+                        </div>
+                    </a>
+                </ion-fab-list>
+            </ion-fab>
+            <div class="btn more-button a1-width-20" text-left>
+                <img src="assets/fotunes/image/btn_more_1.png" alt="">
+                <img src="assets/fotunes/image/btn_more_2.png" class="img-more-active">
+            </div>
+            <div class="notice a1-width-60 a3-container-center" text-center>
+                <span>Gieo liên tục <span style="color: #f9d96d">6 quẻ</span> để hoàn thành 1 quẻ Bói Dịch</span>
+            </div>
+            <div class="btn facebook-button a1-width-20" text-right>
+
+                <a href="https://www.facebook.com/groups/123547708286399/">
+                    <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
+                    <img src="assets/fotunes/image/btn_facebook_2.png" class="img-facebook-active">
+                </a>
+
+            </div>
+        </div>
+    </div>
+
 </ion-content>
-<ion-footer>
-    <div class="height-56 bot-bar-background a1-relative a3-container a3-justify-between">
-        <div class="btn">
-            <div class="btn-more">
-                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi"> <img src="assets/image/btn_more_2.png"></a>
-            </div>
-        </div>
-        <div class="title a3-container-center" text-center>
-            <span>Gieo liên tục <span style="color: yellow">6 lần</span> để hoàn thành 1 quẻ Bói Dịch</span>
-        </div>
-        <div class="btn">
-            <div class="btn-facebook">
-                <a href="https://www.facebook.com/groups/123547708286399/"> <img src="assets/image/btn_facebook_2.png"></a>
-            </div>
-        </div>
-        <div class="bot_bar"></div>
-    </div>
-</ion-footer>

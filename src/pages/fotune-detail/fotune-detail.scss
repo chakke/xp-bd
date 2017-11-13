@@ -1,6 +1,6 @@
 page-fotune-detail {
     ion-content {
-        background-image: url("../assets/image/background.png");
+        background-image: url("../assets/fotunes/image/background.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -17,46 +17,135 @@ page-fotune-detail {
     .height-56 {
         height: 56px;
     }
+    .background-footer {
+        background-position: center center;
+        background-size: cover;
+        background-image: url("../assets/fotunes/image/bot_bar_2.png");
+    }
+    .height-footer {}
     .btn {
-        height: 56px;
-        width: 20%;
         position: relative;
-        .btn-more {
+        img {
+            max-width: 80%;
+            position: absolute;
+        }
+    }
+    .notice {
+        padding-bottom: 5px;
+    }
+    ion-fab {
+        left: 0;
+        bottom: 0;
+        .btn-fab {
+            opacity: 0;
+        }
+        .item-fab-1 {
             img {
                 position: absolute;
-                bottom: 4px;
-                left: 0;
-                height: 45px;
+            }
+            .img-info-active {
+                display: none;
             }
         }
-        .btn-facebook {
+        .item-fab-1:active {
+            .img-info-active {
+                display: block;
+            }
+        }
+        .item-fab-2 {
             img {
                 position: absolute;
-                bottom: 4px;
-                right: 0;
-                height: 45px;
+            }
+            .img-game-active {
+                display: none;
+            }
+        }
+        .item-fab-2:active {
+            .img-game-active {
+                display: block;
             }
         }
     }
-    .bot_bar {
-        position: absolute;
+    .more-button {
+        img {
+            left: 0;
+            bottom: 0;
+        }
+        .img-more-active {
+            display: none;
+        }
+    }
+    .more-button:active {
+        .img-more-active {
+            display: block;
+        }
+    }
+    .facebook-button {
+        img {
+            right: 0;
+            bottom: 0;
+        }
+        .img-facebook-active {
+            display: none;
+        }
+    }
+    .facebook-button:active {
+        .img-facebook-active {
+            display: block;
+        }
+    }
+    .notice {
+        padding-top: 5px;
+        span {
+            color: white;
+            font-family: "Mijas-Ultra" !important;
+            line-height: 1.5rem;
+        }
+        .btn-back {
+            .btn-back-active {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+        }
+        .btn-back:active {
+            .btn-back-active {
+                position: absolute;
+                display: block;
+            }
+        }
+        .btn-detail {
+            .btn-detail-active {
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: none;
+            }
+        }
+        .btn-detail:active {
+            .btn-detail-active {
+                display: block;
+            }
+        }
+    }
+    .botbar1 {
         left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 5px;
+        bottom: -1px;
+        height: 4px;
         z-index: -1;
+        width: 100%;
         background-position: center center;
         background-size: cover;
-        background-image: url("../assets/image/bot_bar_1.png");
+        background-image: url("../assets/fotunes/image/bot_bar_1.png");
     }
     .frame-background {
         z-index: -1;
-        width: 100%;
-        height: 100%;
         position: absolute;
+        top: 15%;
+        // animation: rotate-360 8s steps(72) infinite;
         img {
-            height: 100%;
-            width: 100%;
+            transform: scale(1.6);
         }
         // background-position: center center;
         // background-size: cover;
@@ -78,24 +167,27 @@ page-fotune-detail {
             }
         }
         .divContent {
-            width: calc(100% - 20px);
+            width: 92%;
             margin: auto;
             margin-top: 8%;
             height: 86%;
             overflow: hidden;
+            // opacity: 0;
             .nameInVn {
                 width: 100%;
-                height: 30px;
-                padding-bottom: 5px;
+                height: 8%;
                 .span-1 {
                     color: white;
-                    font-weight: bold;
-                    font-size: 1.3rem;
+                    font-size: 6.5vw;
+                    font-family: "Mijas-Ultra" !important;
+                    letter-spacing: 1px;
                     // text-transform: lowercase;
                 }
                 .span-2 {
                     color: #fff255;
-                    font-size: 1.2rem;
+                    font-size: 5vw;
+                    font-family: "Mijas-Ultra" !important;
+                    letter-spacing: 1px;
                 }
             }
             .attribute-container {
@@ -112,9 +204,10 @@ page-fotune-detail {
                     padding: 5px;
                     .attribute-name {
                         span {
-                            color: #fff255;
-                            font-weight: bold;
-                            font-size: 1.5rem;
+                            color: rgb(255, 243, 101);
+                            font-size: 1.8rem;
+                            font-family: "Mijas-Ultra" !important;
+                            letter-spacing: 1px;
                         }
                     }
                     .attribute-content {
@@ -122,7 +215,7 @@ page-fotune-detail {
                             margin: 0;
                             padding: 4px;
                             color: white;
-                            font-style: italic;
+                            font-family: Mijas-Pro-Italic !important;
                             white-space: pre-wrap;
                         }
                         .uh-row {
@@ -131,7 +224,7 @@ page-fotune-detail {
                                 width: 25%;
                                 span {
                                     color: #fff255;
-                                    font-style: italic;
+                                    font-family: Mijas-Pro-Italic !important;
                                     padding: 5px;
                                 }
                             }
@@ -140,7 +233,7 @@ page-fotune-detail {
                                 span {
                                     padding: 5px;
                                     color: white;
-                                    font-style: italic;
+                                    font-family: Mijas-Pro-Italic !important;
                                     white-space: pre-wrap;
                                     text-align: justify;
                                 }
@@ -151,52 +244,28 @@ page-fotune-detail {
             }
         }
     }
-    .btn-back {
-        position: absolute;
-        left: -10px;
-        width: 50%;
-        top: -34px;
-        // img {
-        //     height: 100%;
-        //     width: 100%;
-        // }
-    }
-    .btn-detail {
-        position: absolute;
-        right: -10px;
-        width: 50%;
-        top: -34px;
-        img {
-            border-radius: 3px;
-        }
-    }
     .head-container {
         background: rgba(black, 0.2);
-        width: 70%;
-        height: 56px;
+        width: 80%;
         margin: auto;
         margin-top: 20px;
         border-radius: 5px;
         .line-container {
             width: 20%;
-            height: 56px;
             padding-left: 10px;
+            line-height: unset;
             .line {
-                height: 6px;
-                padding: 3px;
+                position: relative;
                 img {
-                    // height: 8px;
+                    max-width: 80%;
                 }
             }
         }
         .text-container {
             width: 80%;
-            height: 56px;
             padding: 5px;
             img {
-                height: 56px;
-                width: 120%;
-                max-width: 120%;
+                transform: scale(1.2);
             }
         }
     }

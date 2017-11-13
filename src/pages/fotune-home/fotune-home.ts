@@ -15,12 +15,12 @@ import { Fotunes } from '../../providers/class/fotunes';
   templateUrl: 'fotune-home.html',
 })
 export class FotuneHomePage {
-  pathSkeleton: string = "./assets/image/frame/skeleton-play_";
-  pathResultStart: string = "./assets/image/frame/eff_result-start_";
-  pathResultEnd: string = "./assets/image/frame/eff_result-end_";
-  // pathBgIdle: string = "./assets/image/frame/eff_bg-idle_";
-  pathbtn: string = "./assets/image/frame/eff_btn-idle_";
-  pathText: string = "./assets/image/frame/eff_text-idle_";
+  pathSkeleton: string = "./assets/fotunes/image/frame/skeleton-play_";
+  pathResultStart: string = "./assets/fotunes/image/frame/eff_result-start_";
+  pathResultEnd: string = "./assets/fotunes/image/frame/eff_result-end_";
+  // pathBgIdle: string = "./assets/fotunes/image/frame/eff_bg-idle_";
+  pathbtn: string = "./assets/fotunes/image/frame/eff_btn-idle_";
+  pathText: string = "./assets/fotunes/image/frame/eff_text-idle_";
   coins: string[] = [];
   lineBg: string[] = [];
   lineID: string[] = [];
@@ -32,21 +32,44 @@ export class FotuneHomePage {
   data: any;
   path1: string = "";
   path2: string = "";
-
+  widthResulteff: string = "40%";
+  lineResultHeight: string = "10px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
     this.getImage();
-    this.pathCoin1 = "./assets/image/coin_1.png";
-    this.pathCoin2 = "./assets/image/coin_2.png";
+    this.pathCoin1 = "./assets/fotunes/image/coin_1.png";
+    this.pathCoin2 = "./assets/fotunes/image/coin_2.png";
     this.path1 = "./assets/fotunes/audio/coin.mp3";
     this.path2 = "./assets/fotunes/audio/sowhexagram.mp3";
     this.coins = [this.pathCoin1, this.pathCoin1, this.pathCoin1];
     for (var i = 0; i < 5; i++) {
-      this.lineBg.push("./assets/image/line_bg.png");
+      this.lineBg.push("./assets/fotunes/image/line_bg.png");
     }
     this.lineID = ["line1", "line2", "line3", "line4", "line5", "line6"];
     this.fotune = new Fotunes();
+    if (screen.width > 700) {
+      this.widthResulteff = "30%";
+    } else {
+      this.widthResulteff = "40%";
+    }
+    this.onResize()
+  }
+
+
+  onResize() {
+    console.log("Screen width : " + window.innerWidth);
+    if (screen.height < 500) {
+      this.lineResultHeight = "10px";
+    }
+    else if (screen.height > 600 && screen.height < 700) {
+      this.lineResultHeight = "12px";
+    }
+    else if (screen.height > 700 && screen.height < 800) {
+      this.lineResultHeight = "15px";
+    } else if (screen.height > 800) {
+      this.lineResultHeight = "20px";
+    }
   }
 
   viewInfo() {
@@ -60,8 +83,10 @@ export class FotuneHomePage {
         }, error => { }
       )
     }
-   
+    // this.openSkeleton();
     this.resetResult();
+    this.resetLineResult();
+    // this.testTranslate();
   }
   resetResult() {
     this.fotune.setDefault();
@@ -74,65 +99,59 @@ export class FotuneHomePage {
     this.resultLines = [];
     this.resetLineResult();
   }
+
+  // ===========hide line result eff==============
   resetLineResult() {
+    let imgElem = document.getElementById("imgresulteff");
+    if (imgElem) { imgElem.style.display = "none"; }
+
+    let btnElems = document.getElementById("btnShufferEffect");
+    if (btnElems) { btnElems.style.display = "none"; }
+
     for (let i = 0; i < this.lineID.length; i++) {
       let elems = document.getElementById(this.lineID[i]);
-      if (elems && elems.children.length == 5) {
+      if (elems) {
         for (let j = 0; j < elems.children.length; j++) {
           let elem = <HTMLElement>elems.children[j];
           if (j == 0) {
             elem.style.opacity = "1";
-          } else {
+          } else if (j > 0 && j < 5) {
             elem.style.opacity = "0";
+          } else {
+            elem.style.display = "none";
           }
         }
       }
     }
   }
-  runFirstView() {
-    // this.isRunShuffe = true;
-    this.setPositionCoinDefault();
-    this.openSkeleton();
-    setTimeout(() => {
-      this.closeSkeleton();
-      setTimeout(() => {
-        this.isRunFirstView = true;
-        this.shuffSkeleton();
-      }, 800);
-    }, 1600);
-  }
-  setPositionCoinDefault() {
-    let coinElements = document.getElementsByClassName("coin");
-    let xPosition = [36,56,16];
-    let yPosition = [23,33,43];
-    if (coinElements) {
-        for (var index = 0; index < coinElements.length; index++) {
-        var element = <HTMLElement>coinElements[index];
-        element.style.transform = "translate(" + xPosition[index] + "px" +","+yPosition[index]+"px" + ")";
-      }
-    }
-  }
+
+  // ======open plate ==========
+  rsEffectWhite: boolean = false;
   isTransition: boolean = false;
   showResult(BgNumber: number) {
     this.isTransition = true;
-    // console.log("show result");
     if (BgNumber) {
-      // console.log("open skeleton");
       this.openSkeleton();
       setTimeout(() => {
-        let els = document.getElementById(this.lineID[6 - this.numberQue]);
+        let els = document.getElementById(this.lineID[this.numberQue - 1]);
         if (els) {
-          let elem = <HTMLElement>els.children[BgNumber];
-          let elembg = <HTMLElement>els.children[0];
-          if (elem && elembg) {
-            let imageSrc = "./" + elem.getAttribute("src");
-            this.resultLines.push(imageSrc);
-            elem.style.opacity = '1';
-            elembg.style.opacity = '0';
-            // console.log("show image done");
-          } else {
-            return;
-          }
+          // let elemWhite = <HTMLElement>els.children[5];
+          // elemWhite.style.display = "block";
+          // setTimeout(() => {
+            // elemWhite.style.display = "none";
+            let elem = <HTMLElement>els.children[BgNumber];
+            let elembg = <HTMLElement>els.children[0];
+            if (elem && elembg) {
+              let imageSrc = "./" + elem.getAttribute("src");
+              this.resultLines.push(imageSrc);
+              elem.style.opacity = '1';
+              elembg.style.opacity = '0';
+              // console.log("show image done");
+            } else {
+              return;
+            }
+          // }, 1000);
+
         }
       }, 800);
       setTimeout(() => {
@@ -140,34 +159,35 @@ export class FotuneHomePage {
         setTimeout(() => {
           // console.log("close skeleton done");
           this.isTransition = false;
-          if(this.numberQue<6){
+          if (this.numberQue < 6) {
             this.numberQue++;
-          }else{
+          } else {
             this.getIDResult();
           }
         }, 800);
       }, 1600);
-    }else{
-      // console.log(BgNumber);
-      
+    } else {
     }
   }
-
-  //
   isShowResult: boolean = false;
   getIDResult() {
-    // console.log("get  ID result");
     this.isShuffer6 = true;
     if (this.idResult.length == 6 && this.numberQue == 6) {
+      let imgElem = document.getElementById("imgresulteff");
+      if (imgElem) { imgElem.style.display = "block"; }
+      let btnElems = document.getElementById("btnShufferEffect");
+      if (btnElems) { btnElems.style.display = "block"; }
+
+
       this.fotune.setID(parseInt(this.idResult));
       let check = this.mAppModule.updateINFO(this.fotune);
+
       if (check) {
         this.isShowResult = true;
       } else {
         return;
       }
     } else {
-      // console.log("chua gieo du 6 que");
       return;
     }
   }
@@ -182,12 +202,8 @@ export class FotuneHomePage {
         fotune: this.fotune,
         resultLines: this.resultLines.reverse()
       });
-      this.mAppModule.mAdsManager.showInterstital(true);
+      // this.mAppModule.mAdsManager.showInterstital(true);
       // this.resetResult();
-      return;
-    }
-    if (!this.isRunFirstView) {
-      this.runFirstView();
       return;
     }
     if (!this.isRunShuffe && !this.isTransition) {
@@ -201,18 +217,41 @@ export class FotuneHomePage {
         // console.log("run shuffer done");
         this.showResult(Bgnumber);
         this.isRunShuffe = false;
-       
-      }, 4000);
+
+      }, 3200);
     } else {
       // console.log("Dang shuffer");
       return;
     }
 
   }
-
+  runRandomCoins(): number {
+    var sum: number = 0;
+    for (let i = 0; i < 3; i++) {
+      var number = Math.round(Math.random());
+      sum += number;
+      if (number == 0) {
+        this.coins[i] = this.pathCoin2;
+      } else {
+        this.coins[i] = this.pathCoin1;
+      }
+    }
+    if (sum <= 1) {
+      this.idResult += "0";
+    } else {
+      this.idResult += "1";
+    }
+    return sum + 1;
+  }
   playAudio() {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
+  }
+  showMore(){
+
+  }
+  goToFaceBook(){
+    
   }
   openSkeleton() {
     let element = document.getElementById("skeletonCover");
@@ -231,25 +270,62 @@ export class FotuneHomePage {
       return;
     }
   }
+  runRandomPosition(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  } 
 
-  getPosition(data: number[]) : number[]{
-    let array : number [] = [];
-    for(var i = 0;i < data.length;i++){
-      array.push(data[i] + this.runRandomPosition(15));
+  getBorderPosition(x : number, y: number): number{
+    if(x<40 && y < 40){
+      return 1;
+    }else if(x>40 && y < 40){
+      return 2;
+    }else if(x<40 && y > 40){
+      return 3;
+    }else if(x> 40 && y> 40){
+      return 4;
+    }else{
+      return 0;
     }
-    return array;
   }
+
+  
 
   translateCoins() {
     let coinElements = document.getElementsByClassName("coin");
+    
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-      xPosition = this.getPosition([30,50,10]);
-      yPosition = this.getPosition([10,30,50]);
-      for (let i = 0; i < coinElements.length; i++) {
-        let element = <HTMLElement>coinElements[i];
-        element.style.transform = "translate(" + xPosition[i] + "px" + "," + yPosition[i] + "px" + ")";
+
+      for (let i = 0; i < 3; i++) {
+        xPosition[i] = this.runRandomPosition(1,50);
+        yPosition[i] = this.runRandomPosition(1,50);
+        if (i > 0) {
+          let check : boolean = false;
+          while (!check) {
+            var dem = 0;
+            for (let j = 0; j < i; j++) {
+              if (Math.abs(xPosition[i] - xPosition[j]) < 20 && Math.abs(yPosition[i] - yPosition[j]) < 20) {
+                  xPosition[i] = this.runRandomPosition(1,50);
+                  yPosition[i] = this.runRandomPosition(1,50);
+                  check = false;
+                  dem++;
+              }
+            }
+            if(dem==0){
+              check = true;
+            }
+          }
+         
+          
+        }
+      }
+      
+      for (let z = 0; z < coinElements.length; z++) {
+        var element = <HTMLElement>coinElements[z];
+        if(element){
+          element.style.transform = "translate(" + xPosition[z] + "px" + "," + yPosition[z] + "px" + ")";
+        }
       }
     } else {
       // console.log("element coin k render");
@@ -257,29 +333,9 @@ export class FotuneHomePage {
     }
   }
 
-  
 
-  runRandomPosition(number: number): number {
-      return Math.round(Math.random() * number);
-  }
-  runRandomCoins(): number {
-    var sum : number = 0;
-    for(let i = 0; i < 3; i++){
-      var number = Math.round(Math.random());
-      sum+= number;
-      if(number==0){
-        this.coins[i] = this.pathCoin2;
-      }else{
-        this.coins[i] = this.pathCoin1;
-      }
-    }
-    if (sum <= 1) {
-      this.idResult += "0";
-    } else {
-      this.idResult += "1";
-    }
-    return sum+1;
-  }
+
+  
   skeletonPath: string[] = [];
   resultStartPath: string[] = [];
   resultEndPath: string[] = [];

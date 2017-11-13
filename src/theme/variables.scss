@@ -8,13 +8,6 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 @import "ionic.globals";
-@font-face {
-    font-family: 'Mijas-Ultra';
-    font-style: normal;
-    font-weight: 400;
-    src: url("../assets/fonts/Mijas-Ultra.otf") format('embedded-opentype');
-}
-
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -28,11 +21,7 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary: #488aff,
-secondary: #32db64,
-danger: #f53d3d,
-light: #f4f4f4,
-dark: #222);
+$colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -58,3 +47,12 @@ dark: #222);
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+@font-face {
+    font-family: "Mijas-Ultra";
+    src: local("Mijas-Ultra"), local("Mijas-Ultra"), url("../assets/fonts/Mijas-Ultra.woff") format("woff2");
+}
+
+@font-face {
+    font-family: "Mijas-Pro-Italic";
+    src: local("Mijas-Pro-Italic"), local("Mijas-Pro-Italic"), url("../assets/fonts/MyriadProItalic.woff") format('woff2');
+}
