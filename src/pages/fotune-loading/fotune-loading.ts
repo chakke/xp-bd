@@ -6,7 +6,12 @@ import { AppController } from "../../providers/app-controller";
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { FotuneHomePage } from '../fotune-home/fotune-home';
 import { AdMobFree } from "@ionic-native/admob-free";
-
+/**
+ * Generated class for the FotuneLoadingPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({

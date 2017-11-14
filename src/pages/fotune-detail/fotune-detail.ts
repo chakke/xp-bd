@@ -55,6 +55,8 @@ export class FotuneDetailPage {
   loadParams(){
     if(this.navParams.get("fotune")){
       this.fotune = this.navParams.get("fotune");
+      console.log(this.fotune);
+      
     }else{
       return;
     }
