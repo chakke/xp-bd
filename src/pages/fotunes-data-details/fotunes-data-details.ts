@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FotunesDetail } from '../../providers/class/fotunes-detail';
 import { Fotunes } from '../../providers/class/fotunes';
 
-/**
- * Generated class for the FotunesDataDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-fotunes-data-details',
@@ -29,22 +22,39 @@ export class FotunesDataDetailsPage {
     this.loadParams();
     let screenHeight = screen.height;
     if(screenHeight < 600){
-      this.heightLine = "5px";
-    }
-    else if(screenHeight > 600 && screenHeight < 700){
       this.heightLine = "6px";
     }
+    else if(screenHeight > 600 && screenHeight < 700){
+      this.heightLine = "8px";
+    }
     else if(screenHeight > 700 && screenHeight < 800){
-      this.heightLine = "7px";
+      this.heightLine = "9px";
     }
     else if(screenHeight > 1000 && screenHeight < 1100){
-      this.heightLine = "14px";
+      this.heightLine = "16px";
     }
     else if(screenHeight > 1300){
-      this.heightLine = "18px";
+      this.heightLine = "20px";
     }
   }
-
+  gotoPlayStore(){
+    let elem = document.getElementById("imgGameActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
+  }
+  goToFaceBook(){
+    let elem = document.getElementById("imgFacebookActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
+  }
   loadParams(){
     if(this.navParams.get("fotune")){
       this.fotune = this.navParams.get("fotune");

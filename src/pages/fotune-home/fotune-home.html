@@ -10,8 +10,8 @@
         <div class="a1-content-center plate" text-center [class.hideDiv]="isRunShuffe">
             <img src="assets/fotunes/image/plate.png">
         </div>
-        <div class="a1-content-center plate" text-center [class.hideDiv]="isRunShuffe">
-            <div class="a1-content-center plate-coin">
+        <div class="a1-content-center " text-center [class.hideDiv]="isRunShuffe">
+            <div class="a1-content-center plate-coin" [style.height]="containerCoinHeight" [style.width]="containerCoinHeight">
                 <div class="coin">
                     <img src="{{coins[0]}}">
                 </div>
@@ -159,7 +159,7 @@
             <div class="btn_done_1 a1-relative" (click)="shuffSkeleton()">
                 <div [class.hideDiv]="isShuffer6" class="numberQue"><span>Hào </span> <span> {{numberQue}}</span></div>
                 <img src="assets/fotunes/image/btn_done_1.png" [class.hideDiv]="isShuffer6">
-                <img src="assets/fotunes/image/btn_done_2.png" [class.hideDiv]="isShuffer6" class="btn-done-active">
+                <img src="assets/fotunes/image/btn_done_2.png" [class.hideDiv]="isShuffer6" class="btn-done-active" id="btnDoneActive">
             </div>
         </div>
     </div>
@@ -174,14 +174,14 @@
                     <ion-icon name="arrow-dropleft"></ion-icon>
                 </button>
                 <ion-fab-list side="top">
-                    <div ion-fab class="item-fab-1" (click)="viewInfo()">
+                    <div ion-fab class="item-fab-1" (tap)="viewInfo()">
                         <img src="assets/fotunes/image/btn_info_1.png" alt="">
                         <img src="assets/fotunes/image/btn_info_2.png" class="img-info-active">
                     </div>
-                    <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi">
+                    <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" (tap)="gotoPlayStore()">
                         <div ion-fab class="item-fab-2">
                             <img src="assets/fotunes/image/btn_game_1.png" alt="">
-                            <img src="assets/fotunes/image/btn_game_2.png" class="img-game-active">
+                            <img src="assets/fotunes/image/btn_game_2.png" class="img-game-active" id="imgGameActive">
                         </div>
                     </a>
                 </ion-fab-list>
@@ -193,13 +193,13 @@
             <div class="notice a1-width-60 a3-container-center" text-center>
                 <span>Gieo liên tục <span style="color: #f9d96d">6 quẻ</span> để hoàn thành 1 quẻ Bói Dịch</span>
             </div>
-            <div class="btn facebook-button a1-width-20" text-right>
 
+
+            <div class="btn facebook-button a1-width-20" text-right (tap)="goToFaceBook()">
                 <a href="https://www.facebook.com/groups/123547708286399/">
                     <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
-                    <img src="assets/fotunes/image/btn_facebook_2.png" class="img-facebook-active">
+                    <img src="assets/fotunes/image/btn_facebook_2.png" class="img-facebook-active" id="imgFacebookActive">
                 </a>
-
             </div>
         </div>
     </div>

@@ -27,18 +27,18 @@ page-fotune-home {
             img {}
         }
         .plate-coin {
-            width: 80px;
-            height: 80px;
+            // width: 80px;
+            // height: 80px;
             .coin {
-                width: 30px;
-                height: 28px;
+                width: 30%;
+                height: 30%;
                 z-index: -1;
                 position: absolute;
                 top: 0;
                 left: 0;
                 img {
-                    width: 28px;
-                    height: 28px;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -140,6 +140,7 @@ page-fotune-home {
         }
         .btn_done_1 {
             width: 50%;
+            z-index: 10;
             img {
                 // max-width: 45%;
             }
@@ -153,11 +154,6 @@ page-fotune-home {
                     font-size: 4vw;
                     font-family: "Mijas-Ultra" !important;
                 }
-            }
-        }
-        .btn_done_1:active {
-            .btn-done-active {
-                display: block;
             }
         }
     }
@@ -205,11 +201,6 @@ page-fotune-home {
                 display: none;
             }
         }
-        .item-fab-2:active {
-            .img-game-active {
-                display: block;
-            }
-        }
     }
     .more-button {
         img {
@@ -232,11 +223,6 @@ page-fotune-home {
         }
         .img-facebook-active {
             display: none;
-        }
-    }
-    .facebook-button:active {
-        .img-facebook-active {
-            display: block;
         }
     }
     .notice {

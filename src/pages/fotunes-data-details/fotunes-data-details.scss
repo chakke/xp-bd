@@ -35,28 +35,33 @@ page-fotunes-data-details {
             width: 92%;
             margin: auto;
             margin-top: 8%;
-            height: 86%;
+            height: 88%;
             overflow: hidden;
             // opacity: 0;
             .nameInVn {
                 width: 100%;
-                height: 7%;
+                height: 9%;
                 .span-1 {
                     color: white;
-                    font-size: 5.5vw;
+                    font-size: 6.5vw;
                     font-family: "Mijas-Ultra" !important;
+                    letter-spacing: 1px;
                     // text-transform: lowercase;
                 }
                 .span-2 {
                     color: #fff255;
-                    font-size: 4vw;
+                    font-size: 5vw;
+                    text-align: center;
+                    width: 80%;
+                    white-space: wrap;
                     font-family: "Mijas-Ultra" !important;
+                    letter-spacing: 1px;
                 }
             }
             .attribute-container {
                 overflow: scroll;
                 padding: 10px;
-                height: 90%;
+                height: 82%;
                 .attribute-item {
                     background: rgba(black, 0.2);
                     width: 94%;
@@ -68,11 +73,13 @@ page-fotunes-data-details {
                     .attribute-name {
                         span {
                             color: rgb(255, 243, 101);
-                            font-size: 1.8rem;
+                            font-size: 4.8vw;
                             font-family: "Mijas-Ultra" !important;
-                            img {
-                                max-width: 50%;
-                            }
+                            letter-spacing: 1px;
+                        }
+                        img {
+                            max-width: 30%;
+                            margin-right: 16px;
                         }
                     }
                     .attribute-content {
@@ -82,6 +89,7 @@ page-fotunes-data-details {
                             color: white;
                             font-family: Mijas-Pro-Italic !important;
                             white-space: pre-wrap;
+                            font-size: 4vw;
                         }
                         .uh-row {
                             margin-top: 10px;
@@ -91,6 +99,7 @@ page-fotunes-data-details {
                                     color: #fff255;
                                     font-family: Mijas-Pro-Italic !important;
                                     padding: 5px;
+                                    font-size: 4vw;
                                 }
                             }
                             .uh-content {
@@ -101,6 +110,7 @@ page-fotunes-data-details {
                                     font-family: Mijas-Pro-Italic !important;
                                     white-space: pre-wrap;
                                     text-align: justify;
+                                    font-size: 4vw;
                                 }
                             }
                         }
@@ -129,7 +139,7 @@ page-fotunes-data-details {
         }
     }
     .notice {
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
     ion-fab {
         left: 0;
@@ -140,6 +150,7 @@ page-fotunes-data-details {
         .item-fab-1 {
             img {
                 position: absolute;
+                left: 0;
             }
             .img-info-active {
                 display: none;
@@ -153,14 +164,10 @@ page-fotunes-data-details {
         .item-fab-2 {
             img {
                 position: absolute;
+                left: 0;
             }
             .img-game-active {
                 display: none;
-            }
-        }
-        .item-fab-2:active {
-            .img-game-active {
-                display: block;
             }
         }
     }
@@ -187,11 +194,6 @@ page-fotunes-data-details {
             display: none;
         }
     }
-    .facebook-button:active {
-        .img-facebook-active {
-            display: block;
-        }
-    }
     .notice {
         .btn-back {
             img {
@@ -200,6 +202,7 @@ page-fotunes-data-details {
             .btn-back-active {
                 position: absolute;
                 left: 50%;
+                top: 0;
                 transform: translateX(-50%);
                 display: none;
             }
@@ -223,7 +226,7 @@ page-fotunes-data-details {
     }
     .head-container {
         background: rgba(black, 0.2);
-        width: 70%;
+        width: 80%;
         margin: auto;
         margin-top: 20px;
         border-radius: 5px;
@@ -241,7 +244,9 @@ page-fotunes-data-details {
         .text-container {
             width: 80%;
             padding: 5px;
-            img {}
+            img {
+                transform: scale(1.2);
+            }
         }
     }
 }

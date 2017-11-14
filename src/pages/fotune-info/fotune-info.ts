@@ -26,4 +26,14 @@ export class FotuneInfoPage {
     this.navCtrl.pop();
   }
 
+  goToFaceBook(){
+    let elem = document.getElementById("btnContactActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
+  }
+
 }

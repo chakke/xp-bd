@@ -21,7 +21,7 @@ export class FotuneDetailPage {
   fotune  : Fotunes;
   fotuneDataDetail : FotunesDetail;
   isLoading: boolean = false;
-  heightLine : string = "5px";
+  heightLine : string = "7px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
@@ -33,29 +33,47 @@ export class FotuneDetailPage {
     this.loadParams();
     let screenHeight = screen.height;
     if(screenHeight < 600){
-      this.heightLine = "5px";
-    }
-    else if(screenHeight > 600 && screenHeight < 700){
       this.heightLine = "6px";
     }
+    else if(screenHeight > 600 && screenHeight < 700){
+      this.heightLine = "8px";
+    }
     else if(screenHeight > 700 && screenHeight < 800){
-      this.heightLine = "7px";
+      this.heightLine = "9px";
     }
     else if(screenHeight > 1000 && screenHeight < 1100){
-      this.heightLine = "14px";
+      this.heightLine = "16px";
     }
     else if(screenHeight > 1300){
-      this.heightLine = "18px";
+      this.heightLine = "20px";
     }
   }
 
   // ionViewDidEnter() {
   //   this.loadParams();
   // }
+  gotoPlayStore(){
+    let elem = document.getElementById("imgGameActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
+  }
+  goToFaceBook(){
+    let elem = document.getElementById("imgFacebookActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
+  }
   loadParams(){
     if(this.navParams.get("fotune")){
       this.fotune = this.navParams.get("fotune");
-      console.log(this.fotune);
+      // console.log(this.fotune);
       
     }else{
       return;

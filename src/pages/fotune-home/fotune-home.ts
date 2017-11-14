@@ -34,6 +34,7 @@ export class FotuneHomePage {
   path2: string = "";
   widthResulteff: string = "40%";
   lineResultHeight: string = "10px";
+  containerCoinHeight  :string = "100px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
@@ -49,26 +50,30 @@ export class FotuneHomePage {
     this.lineID = ["line1", "line2", "line3", "line4", "line5", "line6"];
     this.fotune = new Fotunes();
     if (screen.width > 700) {
-      this.widthResulteff = "30%";
+      this.widthResulteff = Math.round(screen.width * 0.3) + "px";
     } else {
-      this.widthResulteff = "40%";
+      this.widthResulteff = Math.round(screen.width * 0.4) + "px";
     }
     this.onResize()
   }
 
 
   onResize() {
-    console.log("Screen width : " + window.innerWidth);
+    // console.log("Screen width : " + window.innerWidth);
     if (screen.height < 500) {
       this.lineResultHeight = "10px";
+      this.containerCoinHeight = "100px";
     }
     else if (screen.height > 600 && screen.height < 700) {
       this.lineResultHeight = "12px";
+      this.containerCoinHeight = "100px";
     }
     else if (screen.height > 700 && screen.height < 800) {
       this.lineResultHeight = "15px";
+      this.containerCoinHeight = "120px";
     } else if (screen.height > 800) {
       this.lineResultHeight = "20px";
+      this.containerCoinHeight = "180px";
     }
   }
 
@@ -196,7 +201,13 @@ export class FotuneHomePage {
   isRunFirstView: boolean = false;
   numberQue: number = 1;
   shuffSkeleton() {
+    // this.numberQue++;
     // giải đoán
+    let elem = document.getElementById("btnDoneActive");
+    if(elem){elem.style.display = "block";}
+    setTimeout(()=> {
+      elem.style.display = "none";
+    }, 100);
     if (this.isShowResult) {
       this.navCtrl.push("FotuneDetailPage", {
         fotune: this.fotune,
@@ -247,11 +258,25 @@ export class FotuneHomePage {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
   }
-  showMore(){
-
+  showMore(){ 
+  }
+  gotoPlayStore(){
+    let elem = document.getElementById("imgGameActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
   }
   goToFaceBook(){
-    
+    let elem = document.getElementById("imgFacebookActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display ="none"; 
+      }, 100);
+    }
   }
   openSkeleton() {
     let element = document.getElementById("skeletonCover");
@@ -261,7 +286,9 @@ export class FotuneHomePage {
       return;
     }
   }
-
+  test(){
+    this.numberQue++;
+  }
   closeSkeleton() {
     let element = document.getElementById("skeletonCover");
     if (element) {

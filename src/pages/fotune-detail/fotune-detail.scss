@@ -31,7 +31,7 @@ page-fotune-detail {
         }
     }
     .notice {
-        padding-bottom: 5px;
+        padding-bottom: 14px;
     }
     ion-fab {
         left: 0;
@@ -42,6 +42,7 @@ page-fotune-detail {
         .item-fab-1 {
             img {
                 position: absolute;
+                left: 0;
             }
             .img-info-active {
                 display: none;
@@ -55,14 +56,10 @@ page-fotune-detail {
         .item-fab-2 {
             img {
                 position: absolute;
+                left: 0;
             }
             .img-game-active {
                 display: none;
-            }
-        }
-        .item-fab-2:active {
-            .img-game-active {
-                display: block;
             }
         }
     }
@@ -87,11 +84,6 @@ page-fotune-detail {
         }
         .img-facebook-active {
             display: none;
-        }
-    }
-    .facebook-button:active {
-        .img-facebook-active {
-            display: block;
         }
     }
     .notice {
@@ -170,12 +162,12 @@ page-fotune-detail {
             width: 92%;
             margin: auto;
             margin-top: 8%;
-            height: 86%;
+            height: 88%;
             overflow: hidden;
             // opacity: 0;
             .nameInVn {
                 width: 100%;
-                height: 8%;
+                height: 9%;
                 .span-1 {
                     color: white;
                     font-size: 6.5vw;
@@ -186,6 +178,9 @@ page-fotune-detail {
                 .span-2 {
                     color: #fff255;
                     font-size: 5vw;
+                    text-align: center;
+                    width: 80%;
+                    white-space: wrap;
                     font-family: "Mijas-Ultra" !important;
                     letter-spacing: 1px;
                 }
@@ -193,7 +188,7 @@ page-fotune-detail {
             .attribute-container {
                 overflow: scroll;
                 padding: 10px;
-                height: 90%;
+                height: 82%;
                 .attribute-item {
                     background: rgba(black, 0.2);
                     width: 94%;
@@ -205,7 +200,7 @@ page-fotune-detail {
                     .attribute-name {
                         span {
                             color: rgb(255, 243, 101);
-                            font-size: 1.8rem;
+                            font-size: 4.8vw;
                             font-family: "Mijas-Ultra" !important;
                             letter-spacing: 1px;
                         }
@@ -217,6 +212,7 @@ page-fotune-detail {
                             color: white;
                             font-family: Mijas-Pro-Italic !important;
                             white-space: pre-wrap;
+                            font-size: 4vw;
                         }
                         .uh-row {
                             margin-top: 10px;
@@ -226,6 +222,7 @@ page-fotune-detail {
                                     color: #fff255;
                                     font-family: Mijas-Pro-Italic !important;
                                     padding: 5px;
+                                    font-size: 4vw;
                                 }
                             }
                             .uh-content {
@@ -236,6 +233,7 @@ page-fotune-detail {
                                     font-family: Mijas-Pro-Italic !important;
                                     white-space: pre-wrap;
                                     text-align: justify;
+                                    font-size: 4vw;
                                 }
                             }
                         }

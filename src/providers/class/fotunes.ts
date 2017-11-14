@@ -36,7 +36,7 @@ export class Fotunes {
       hanh: "hanh"
     };
     this.more = "more";
-    this.imageSrc = "./assets/fotunes/image/text/text_4.png";
+    this.imageSrc = "./assets/fotunes/image/text/text_0.png";
   }
   copy(fotune: Fotunes){
     this.name = fotune.name;
