@@ -6,6 +6,7 @@ import { AppController } from "../../providers/app-controller";
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { FotuneHomePage } from '../fotune-home/fotune-home';
 import { AdMobFree } from "@ionic-native/admob-free";
+import { SplashScreen } from '@ionic-native/splash-screen';
 /**
  * Generated class for the FotuneLoadingPage page.
  *
@@ -21,13 +22,17 @@ import { AdMobFree } from "@ionic-native/admob-free";
 export class FotuneLoadingPage {
 
   constructor(
+    private splash : SplashScreen,
     public mAdmobfree: AdMobFree,
     private mAppModule: FotunesModule,
     public mGoogleAnalytics: GoogleAnalytics,
     private mPlatform: Platform,
     public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  // isFirstTime : boolean = true;
+  ionViewDidLeave(){
+    setTimeout(()=>{this.splash.hide()},500);
+  }
   ionViewDidEnter() {
     AppController.getInstance().setPlatform(this.mPlatform);
     this.mAppModule.isOnMobileDevice = AppController.getInstance().isOnMobileDevice();
@@ -52,9 +57,7 @@ export class FotuneLoadingPage {
 
   onLoaded() {
     this.navCtrl.setRoot(FotuneHomePage, {}, {
-      animate: false,
-      direction: "forward",
-      duration: 400
+      animate: false
     });
   }
 

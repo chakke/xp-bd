@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { Fotunes } from '../../providers/class/fotunes';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 /**
  * Generated class for the FotuneHomePage page.
@@ -18,7 +19,6 @@ export class FotuneHomePage {
   pathSkeleton: string = "./assets/fotunes/image/frame/skeleton-play_";
   pathResultStart: string = "./assets/fotunes/image/frame/eff_result-start_";
   pathResultEnd: string = "./assets/fotunes/image/frame/eff_result-end_";
-  // pathBgIdle: string = "./assets/fotunes/image/frame/eff_bg-idle_";
   pathbtn: string = "./assets/fotunes/image/frame/eff_btn-idle_";
   pathText: string = "./assets/fotunes/image/frame/eff_text-idle_";
   coins: string[] = [];
@@ -34,7 +34,7 @@ export class FotuneHomePage {
   path2: string = "";
   widthResulteff: string = "40%";
   lineResultHeight: string = "10px";
-  containerCoinHeight  :string = "100px";
+  containerCoinHeight  :string = "80px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
@@ -59,10 +59,9 @@ export class FotuneHomePage {
 
 
   onResize() {
-    // console.log("Screen width : " + window.innerWidth);
     if (screen.height < 500) {
       this.lineResultHeight = "10px";
-      this.containerCoinHeight = "100px";
+      this.containerCoinHeight = "80px";
     }
     else if (screen.height > 600 && screen.height < 700) {
       this.lineResultHeight = "12px";
@@ -88,10 +87,9 @@ export class FotuneHomePage {
         }, error => { }
       )
     }
-    // this.openSkeleton();
+   
     this.resetResult();
     this.resetLineResult();
-    // this.testTranslate();
   }
   resetResult() {
     this.fotune.setDefault();
@@ -140,10 +138,6 @@ export class FotuneHomePage {
       setTimeout(() => {
         let els = document.getElementById(this.lineID[this.numberQue - 1]);
         if (els) {
-          // let elemWhite = <HTMLElement>els.children[5];
-          // elemWhite.style.display = "block";
-          // setTimeout(() => {
-            // elemWhite.style.display = "none";
             let elem = <HTMLElement>els.children[BgNumber];
             let elembg = <HTMLElement>els.children[0];
             if (elem && elembg) {
@@ -151,18 +145,15 @@ export class FotuneHomePage {
               this.resultLines.push(imageSrc);
               elem.style.opacity = '1';
               elembg.style.opacity = '0';
-              // console.log("show image done");
             } else {
               return;
             }
-          // }, 1000);
 
         }
       }, 800);
       setTimeout(() => {
         this.closeSkeleton();
         setTimeout(() => {
-          // console.log("close skeleton done");
           this.isTransition = false;
           if (this.numberQue < 6) {
             this.numberQue++;
@@ -201,8 +192,6 @@ export class FotuneHomePage {
   isRunFirstView: boolean = false;
   numberQue: number = 1;
   shuffSkeleton() {
-    // this.numberQue++;
-    // giải đoán
     let elem = document.getElementById("btnDoneActive");
     if(elem){elem.style.display = "block";}
     setTimeout(()=> {
@@ -213,25 +202,20 @@ export class FotuneHomePage {
         fotune: this.fotune,
         resultLines: this.resultLines.reverse()
       });
-      // this.mAppModule.mAdsManager.showInterstital(true);
-      // this.resetResult();
       return;
     }
     if (!this.isRunShuffe && !this.isTransition) {
       this.isRunShuffe = true;
-      // console.log("run shuffer");
 
       this.playAudio();
       let Bgnumber: number = this.runRandomCoins();
       this.translateCoins();
       setTimeout(() => {
-        // console.log("run shuffer done");
         this.showResult(Bgnumber);
         this.isRunShuffe = false;
 
       }, 3200);
     } else {
-      // console.log("Dang shuffer");
       return;
     }
 
@@ -257,8 +241,6 @@ export class FotuneHomePage {
   playAudio() {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
-  }
-  showMore(){ 
   }
   gotoPlayStore(){
     let elem = document.getElementById("imgGameActive");
@@ -286,9 +268,6 @@ export class FotuneHomePage {
       return;
     }
   }
-  test(){
-    this.numberQue++;
-  }
   closeSkeleton() {
     let element = document.getElementById("skeletonCover");
     if (element) {
@@ -301,21 +280,6 @@ export class FotuneHomePage {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   } 
 
-  getBorderPosition(x : number, y: number): number{
-    if(x<40 && y < 40){
-      return 1;
-    }else if(x>40 && y < 40){
-      return 2;
-    }else if(x<40 && y > 40){
-      return 3;
-    }else if(x> 40 && y> 40){
-      return 4;
-    }else{
-      return 0;
-    }
-  }
-
-  
 
   translateCoins() {
     let coinElements = document.getElementsByClassName("coin");
@@ -323,18 +287,19 @@ export class FotuneHomePage {
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-
+      var maxRand : number = parseInt(this.containerCoinHeight);
+      maxRand = maxRand-(maxRand*0.3);
       for (let i = 0; i < 3; i++) {
-        xPosition[i] = this.runRandomPosition(1,50);
-        yPosition[i] = this.runRandomPosition(1,50);
+        xPosition[i] = this.runRandomPosition(1,maxRand);
+        yPosition[i] = this.runRandomPosition(1,maxRand);
         if (i > 0) {
           let check : boolean = false;
           while (!check) {
             var dem = 0;
             for (let j = 0; j < i; j++) {
               if (Math.abs(xPosition[i] - xPosition[j]) < 20 && Math.abs(yPosition[i] - yPosition[j]) < 20) {
-                  xPosition[i] = this.runRandomPosition(1,50);
-                  yPosition[i] = this.runRandomPosition(1,50);
+                  xPosition[i] = this.runRandomPosition(1,maxRand);
+                  yPosition[i] = this.runRandomPosition(1,maxRand);
                   check = false;
                   dem++;
               }
@@ -355,7 +320,6 @@ export class FotuneHomePage {
         }
       }
     } else {
-      // console.log("element coin k render");
       return;
     }
   }
@@ -366,7 +330,6 @@ export class FotuneHomePage {
   skeletonPath: string[] = [];
   resultStartPath: string[] = [];
   resultEndPath: string[] = [];
-  // effBgIdle: string[] = [];
   effBtn: string[] = [];
   effText: string[] = [];
 
@@ -382,9 +345,7 @@ export class FotuneHomePage {
         this.resultEndPath.push(this.pathResultEnd + j + ".png");
       }
     }
-    // for (var z = 0; z <= 26; z++) {
-    //   this.effBgIdle.push(this.pathBgIdle + z + ".png");
-    // }
+    
   }
 
 
