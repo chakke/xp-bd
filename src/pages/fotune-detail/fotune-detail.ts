@@ -4,13 +4,6 @@ import { Fotunes } from '../../providers/class/fotunes';
 import { FotunesDetail } from '../../providers/class/fotunes-detail';
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 
-/**
- * Generated class for the FotuneDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-fotune-detail',

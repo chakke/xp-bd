@@ -9,74 +9,40 @@ export class AdsManager {
     mAdsEnable: boolean = true;
 
     public setAdmobFree(admobFree: AdMobFree) {
-        if (!this.mAdsEnable) return;
         if (!admobFree) return;
         if (!this.mAdmobFree) {
             this.mAdmobFree = admobFree;
-            this.load();
         }
     }
 
-    public load() {
+    public load(data: any) {
+        if ('enable' in data) {
+            this.mAdsEnable = data.enable;
+        }
 
-    }
+        if (this.mAdsEnable) {
+            let adsConfig = data[data.platform];
 
-    private loadAndroid() {
-        if (!this.mAdmobFree) return;
-        const bannerConfig: AdMobFreeBannerConfig = {
-            autoShow: true,
-            id: "ca-app-pub-5504805357330554/5250257224",
-            overlap: true,
-            isTesting: false,
-            offsetTopBar: true
-        };
+            this.mAdmobFree.banner.config(adsConfig.banner);
+            if (adsConfig.banner.autoShow) {
+                this.mAdmobFree.banner.prepare();
+            }
 
-        this.mAdmobFree.banner.config(bannerConfig);
+            this.mAdmobFree.interstitial.config(adsConfig.interstitial);
 
-        this.mAdmobFree.banner.prepare();
 
-        let interstitialConfig: AdMobFreeInterstitialConfig = {
-            autoShow: false,
-            id: "ca-app-pub-5504805357330554/6726990422",
-            isTesting: false
-
-        };
-
-        this.mAdmobFree.interstitial.config(interstitialConfig);
-
-        this.mAdmobFree.interstitial.prepare();
-    }
-
-    private loadIOS() {
-        if (!this.mAdmobFree) return;
-        const bannerConfig: AdMobFreeBannerConfig = {
-            autoShow: true,
-            id: "ca-app-pub-5504805357330554/9680456825",
-            overlap: true,
-            isTesting: false,
-            offsetTopBar: true
-        };
-
-        this.mAdmobFree.banner.config(bannerConfig);
-
-        this.mAdmobFree.banner.prepare();
-
-        let interstitialConfig: AdMobFreeInterstitialConfig = {
-            autoShow: false,
-            id: "ca-app-pub-5504805357330554/2157190026",
-            isTesting: false
-
-        };
-
-        this.mAdmobFree.interstitial.config(interstitialConfig);
-
-        this.mAdmobFree.interstitial.prepare();
+            this.mAdmobFree.interstitial.prepare();
+        }
     }
 
     public showInterstital(force: boolean = true) {
+
         if (!this.mAdsEnable) return;
         if (force) {
-            this.mAdmobFree.interstitial.show();
+            this.mAdmobFree.interstitial.prepare().then(
+                () => { this.mAdmobFree.interstitial.show(); }
+            );
+            return;
         }
         this.mTimeCheck++;
         if (this.mTimeCheck >= 10) {

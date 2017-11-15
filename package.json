@@ -29,7 +29,7 @@
     "cordova-admob-sdk": "^0.11.1",
     "cordova-android": "^6.2.3",
     "cordova-ios": "4.5.3",
-    "cordova-plugin-admob-free": "git+https://github.com/ratson/cordova-plugin-admob-free.git",
+    "cordova-plugin-admob-free": "^0.11.0",
     "cordova-plugin-device": "^1.1.6",
     "cordova-plugin-google-analytics": "^1.8.3",
     "cordova-plugin-ionic-webview": "^1.1.16",
@@ -57,8 +57,8 @@
       "cordova-plugin-whitelist": {},
       "ionic-plugin-keyboard": {},
       "cordova-plugin-google-analytics": {},
-      "cordova-plugin-admob-free": {},
-      "cordova-plugin-statusbar": {}
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-admob-free": {}
     },
     "platforms": [
       "android",

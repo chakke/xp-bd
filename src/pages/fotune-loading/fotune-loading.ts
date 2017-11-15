@@ -22,7 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class FotuneLoadingPage {
 
   constructor(
-    private splash : SplashScreen,
+    private splash: SplashScreen,
     public mAdmobfree: AdMobFree,
     private mAppModule: FotunesModule,
     public mGoogleAnalytics: GoogleAnalytics,
@@ -30,8 +30,8 @@ export class FotuneLoadingPage {
     public navCtrl: NavController, public navParams: NavParams) {
   }
   // isFirstTime : boolean = true;
-  ionViewDidLeave(){
-    setTimeout(()=>{this.splash.hide()},500);
+  ionViewDidLeave() {
+    this.splash.hide();
   }
   ionViewDidEnter() {
     AppController.getInstance().setPlatform(this.mPlatform);
@@ -46,7 +46,8 @@ export class FotuneLoadingPage {
   }
 
   onLoadedConfig() {
-
+    let admobData = this.mAppModule.getAppConfig().get("admob");
+    this.mAppModule.getAdsManager().load(admobData);
     let assets = this.mAppModule.getAppConfig().get("resources");
     AppModule.getInstance().getResourceLoader().load(assets).then(
       () => {

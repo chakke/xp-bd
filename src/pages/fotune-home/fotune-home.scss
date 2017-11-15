@@ -8,8 +8,10 @@ page-fotune-home {
     $plate-max-width: 160px;
     $skeleton-background-max-width: 280px;
     ion-content {
-        padding-top: 20px !important;
         background-image: url("../assets/image/background.png");
+        .scroll-content{
+            overflow-y: hidden !important;
+        }
     }
     .a-page-underground {
         position: absolute;

@@ -34,7 +34,7 @@ export class FotuneHomePage {
   path2: string = "";
   widthResulteff: string = "40%";
   lineResultHeight: string = "10px";
-  containerCoinHeight  :string = "80px";
+  containerCoinHeight: string = "80px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
@@ -80,6 +80,7 @@ export class FotuneHomePage {
     this.navCtrl.push("FotuneInfoPage");
   }
   ionViewDidEnter() {
+
     if (!this.data) {
       this.mAppModule.getDataFROMJSON().then(
         data => {
@@ -87,7 +88,7 @@ export class FotuneHomePage {
         }, error => { }
       )
     }
-   
+
     this.resetResult();
     this.resetLineResult();
   }
@@ -138,16 +139,16 @@ export class FotuneHomePage {
       setTimeout(() => {
         let els = document.getElementById(this.lineID[this.numberQue - 1]);
         if (els) {
-            let elem = <HTMLElement>els.children[BgNumber];
-            let elembg = <HTMLElement>els.children[0];
-            if (elem && elembg) {
-              let imageSrc = "./" + elem.getAttribute("src");
-              this.resultLines.push(imageSrc);
-              elem.style.opacity = '1';
-              elembg.style.opacity = '0';
-            } else {
-              return;
-            }
+          let elem = <HTMLElement>els.children[BgNumber];
+          let elembg = <HTMLElement>els.children[0];
+          if (elem && elembg) {
+            let imageSrc = "./" + elem.getAttribute("src");
+            this.resultLines.push(imageSrc);
+            elem.style.opacity = '1';
+            elembg.style.opacity = '0';
+          } else {
+            return;
+          }
 
         }
       }, 800);
@@ -174,6 +175,7 @@ export class FotuneHomePage {
       let btnElems = document.getElementById("btnShufferEffect");
       if (btnElems) { btnElems.style.display = "block"; }
 
+      this.mAppModule.getAdsManager().showInterstital(true);
 
       this.fotune.setID(parseInt(this.idResult));
       let check = this.mAppModule.updateINFO(this.fotune);
@@ -193,8 +195,8 @@ export class FotuneHomePage {
   numberQue: number = 1;
   shuffSkeleton() {
     let elem = document.getElementById("btnDoneActive");
-    if(elem){elem.style.display = "block";}
-    setTimeout(()=> {
+    if (elem) { elem.style.display = "block"; }
+    setTimeout(() => {
       elem.style.display = "none";
     }, 100);
     if (this.isShowResult) {
@@ -242,21 +244,21 @@ export class FotuneHomePage {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
   }
-  gotoPlayStore(){
+  gotoPlayStore() {
     let elem = document.getElementById("imgGameActive");
-    if(elem){
+    if (elem) {
       elem.style.display = "block";
       setTimeout(() => {
-        elem.style.display ="none"; 
+        elem.style.display = "none";
       }, 100);
     }
   }
-  goToFaceBook(){
+  goToFaceBook() {
     let elem = document.getElementById("imgFacebookActive");
-    if(elem){
+    if (elem) {
       elem.style.display = "block";
       setTimeout(() => {
-        elem.style.display ="none"; 
+        elem.style.display = "none";
       }, 100);
     }
   }
@@ -277,45 +279,45 @@ export class FotuneHomePage {
     }
   }
   runRandomPosition(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  } 
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
 
   translateCoins() {
     let coinElements = document.getElementsByClassName("coin");
-    
+
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-      var maxRand : number = parseInt(this.containerCoinHeight);
-      maxRand = maxRand-(maxRand*0.3);
+      var maxRand: number = parseInt(this.containerCoinHeight);
+      maxRand = maxRand - (maxRand * 0.3);
       for (let i = 0; i < 3; i++) {
-        xPosition[i] = this.runRandomPosition(1,maxRand);
-        yPosition[i] = this.runRandomPosition(1,maxRand);
+        xPosition[i] = this.runRandomPosition(1, maxRand);
+        yPosition[i] = this.runRandomPosition(1, maxRand);
         if (i > 0) {
-          let check : boolean = false;
+          let check: boolean = false;
           while (!check) {
             var dem = 0;
             for (let j = 0; j < i; j++) {
               if (Math.abs(xPosition[i] - xPosition[j]) < 20 && Math.abs(yPosition[i] - yPosition[j]) < 20) {
-                  xPosition[i] = this.runRandomPosition(1,maxRand);
-                  yPosition[i] = this.runRandomPosition(1,maxRand);
-                  check = false;
-                  dem++;
+                xPosition[i] = this.runRandomPosition(1, maxRand);
+                yPosition[i] = this.runRandomPosition(1, maxRand);
+                check = false;
+                dem++;
               }
             }
-            if(dem==0){
+            if (dem == 0) {
               check = true;
             }
           }
-         
-          
+
+
         }
       }
-      
+
       for (let z = 0; z < coinElements.length; z++) {
         var element = <HTMLElement>coinElements[z];
-        if(element){
+        if (element) {
           element.style.transform = "translate(" + xPosition[z] + "px" + "," + yPosition[z] + "px" + ")";
         }
       }
@@ -326,7 +328,7 @@ export class FotuneHomePage {
 
 
 
-  
+
   skeletonPath: string[] = [];
   resultStartPath: string[] = [];
   resultEndPath: string[] = [];
@@ -345,7 +347,7 @@ export class FotuneHomePage {
         this.resultEndPath.push(this.pathResultEnd + j + ".png");
       }
     }
-    
+
   }
 
 

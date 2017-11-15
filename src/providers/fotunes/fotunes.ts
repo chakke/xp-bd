@@ -16,25 +16,27 @@ import { AdsManager } from '../common/ads-manager';
   and Angular DI.
 */
 @Injectable()
-export class FotunesModule{
+export class FotunesModule {
   mFotuneLoadData: FotunesLoadData;
   public mAnalyticsManager: AnalyticsManager;
   public mAdsManager: AdsManager;
   fortunesData = new Array<Fotunes>();
   fotunesDataDetail = new Array<FotunesDetail>();
-  isOnMobileDevice : boolean = true;
+  isOnMobileDevice: boolean = true;
   private mConfig: AppConfig;
-  private mAudio: HTMLAudioElement; 
+  private mAudio: HTMLAudioElement;
   constructor(
     private mHttpService: HttpService,
     public http: Http) {
     this.mFotuneLoadData = new FotunesLoadData(this.http);
     this.mAnalyticsManager = new AnalyticsManager();
-    this.mAdsManager = new AdsManager();  
+    this.mAdsManager = new AdsManager();
     this.mConfig = new AppConfig();
     this.mAudio = new Audio();
   }
-
+  getAdsManager() {
+    return this.mAdsManager;
+  }
   getAppConfig() {
     return this.mConfig;
   }
@@ -54,20 +56,20 @@ export class FotunesModule{
 
   }
 
-  getDataDetailFROMJSON(){
-    
+  getDataDetailFROMJSON() {
+
     return new Promise((resolve, reject) => {
-      if (this.fotunesDataDetail.length>0){
+      if (this.fotunesDataDetail.length > 0) {
         resolve(this.fotunesDataDetail);
-      } 
+      }
       else {
         this.mFotuneLoadData.getDataDetailFROMJSON().subscribe((data) => {
-          if(data){
+          if (data) {
             data.forEach(element => {
               this.fotunesDataDetail.push(new FotunesDetail(element));
             });
             resolve(this.fotunesDataDetail);
-          }else{
+          } else {
             resolve(false);
           }
         });
@@ -75,20 +77,20 @@ export class FotunesModule{
     });
   }
 
-  getDataFROMJSON(){
-    
+  getDataFROMJSON() {
+
     return new Promise((resolve, reject) => {
-      if (this.fortunesData.length>0){
+      if (this.fortunesData.length > 0) {
         resolve(this.fortunesData);
-      } 
+      }
       else {
         this.mFotuneLoadData.getDataFROMJSON().subscribe((data) => {
-          if(data){
+          if (data) {
             data.forEach(element => {
               this.fortunesData.push(new Fotunes(element));
             });
             resolve(this.fortunesData);
-          }else{
+          } else {
             resolve(false);
           }
         });
@@ -96,73 +98,73 @@ export class FotunesModule{
     });
   }
 
-  updateDataDetail(fotuneDetail : FotunesDetail){
+  updateDataDetail(fotuneDetail: FotunesDetail) {
 
     if (this.fotunesDataDetail.length > 0) {
       for (var index = 0; index < this.fotunesDataDetail.length; index++) {
         var element = this.fotunesDataDetail[index];
-        if(fotuneDetail.Id == element.Id){
+        if (fotuneDetail.Id == element.Id) {
           fotuneDetail.updateINFO(element);
           return fotuneDetail;
         }
       }
       return false;
     } else {
-      return this.getDataDetailFROMJSON().then((res: any)=>{
-        if(res){
+      return this.getDataDetailFROMJSON().then((res: any) => {
+        if (res) {
           for (var index = 0; index < res.length; index++) {
             var element = res[index];
-            if(fotuneDetail.Id == parseInt(element.Id)){
+            if (fotuneDetail.Id == parseInt(element.Id)) {
               fotuneDetail.updateINFO(element);
               return fotuneDetail;
             }
           }
-        }else{
+        } else {
           return false;
         }
-      }).catch(err=>{return err;});
+      }).catch(err => { return err; });
     }
 
   }
 
-  updateINFO(fotune : Fotunes){
-    if(this.fortunesData.length>0){
+  updateINFO(fotune: Fotunes) {
+    if (this.fortunesData.length > 0) {
       for (var index = 0; index < this.fortunesData.length; index++) {
         var element = this.fortunesData[index];
-        if(fotune.id == element.id){
+        if (fotune.id == element.id) {
           fotune.copy(element);
           return fotune;
         }
       }
       return false;
-    }else{
-      return this.getDataFROMJSON().then((res: any)=>{
-        if(res){
+    } else {
+      return this.getDataFROMJSON().then((res: any) => {
+        if (res) {
           for (var index = 0; index < res.length; index++) {
             var element = res[index];
-            if(fotune.id == parseInt(element.id)){
+            if (fotune.id == parseInt(element.id)) {
               fotune.parseData(element);
               return fotune;
             }
           }
           return false;
-        }else{
+        } else {
           return false;
         }
-      }).catch(exception=>{return exception});
+      }).catch(exception => { return exception });
     }
   }
 
-  loadAudio(src : string){
+  loadAudio(src: string) {
     this.mAudio.src = src;
   }
-  playAudio(){
-    if(this.mAudio.paused){
+  playAudio() {
+    if (this.mAudio.paused) {
       this.mAudio.play();
     }
   }
-  stopAudio(){
-    if(!this.mAudio.paused){
+  stopAudio() {
+    if (!this.mAudio.paused) {
       this.mAudio.pause();
     }
     this.mAudio.currentTime = 0;
