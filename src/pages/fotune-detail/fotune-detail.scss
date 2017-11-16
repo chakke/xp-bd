@@ -1,270 +1,271 @@
 page-fotune-detail {
-    ion-content {
-        background-image: url("../assets/fotunes/image/background.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+  ion-content {
+    background-image: url("../assets/fotunes/image/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .footer-md::before {
+    height: 0;
+  }
+  .header-md::after {
+    height: 0;
+  }
+  .footer-ios {
+    border: none;
+  }
+  .height-56 {
+    height: 56px;
+  }
+  .background-footer {
+    background-position: center center;
+    background-size: cover;
+    background-image: url("../assets/fotunes/image/bot_bar_2.png");
+  }
+  .height-footer {}
+  .btn {
+    position: relative;
+    img {
+      max-width: 80%;
+      position: absolute;
     }
-    .footer-md::before {
-        height: 0;
+  }
+  .notice {
+    padding-bottom: 14px;
+  }
+  ion-fab {
+    left: 0;
+    bottom: 0;
+    .btn-fab {
+      opacity: 0;
     }
-    .header-md::after {
-        height: 0;
+    .item-fab-1 {
+        cursor: pointer;
+      img {
+        position: absolute;
+        left: 0;
+      }
+      .img-info-active {
+        display: none;
+      }
+
     }
-    .footer-ios {
-        border: none;
+    .item-fab-1:active {
+      .img-info-active {
+        display: block;
+      }
     }
-    .height-56 {
-        height: 56px;
+    .item-fab-2 {
+      img {
+        position: absolute;
+        left: 0;
+      }
+      .img-game-active {
+        display: none;
+      }
     }
-    .background-footer {
-        background-position: center center;
-        background-size: cover;
-        background-image: url("../assets/fotunes/image/bot_bar_2.png");
+  }
+  .more-button {
+    cursor: pointer;
+    img {
+      left: 0;
+      bottom: 0;
     }
-    .height-footer {}
-    .btn {
+    .img-more-active {
+      display: none;
+    }
+  }
+  .more-button:active {
+    .img-more-active {
+      display: block;
+    }
+  }
+  .facebook-button {
+    img {
+      right: 0;
+      bottom: 0;
+    }
+    .img-facebook-active {
+      display: none;
+    }
+  }
+  .notice {
+    padding-top: 5px;
+    span {
+      color: white;
+      font-family: "Mijas-Ultra" !important;
+      line-height: 1.5rem;
+    }
+    .btn-back {
+        cursor: pointer;
+      .btn-back-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+      }
+    }
+    .btn-back:active {
+      .btn-back-active {
+        position: absolute;
+        display: block;
+      }
+    }
+    .btn-detail {
+        cursor: pointer;
+      .btn-detail-active {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+      }
+    }
+    .btn-detail:active {
+      .btn-detail-active {
+        display: block;
+      }
+    }
+  }
+  .botbar1 {
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    z-index: -1;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("../assets/fotunes/image/bot_bar_1.png");
+  }
+  .frame-background {
+    z-index: -1;
+    position: absolute;
+    top: 15%; // animation: rotate-360 8s steps(72) infinite;
+    img {
+      transform: scale(1.6);
+    } // background-position: center center;
+    // background-size: cover;
+    // background-image: url("../assets/image/frame_effect.png");
+  }
+  .detailPage-container {
+    line-height: unset;
+    overflow: hidden;
+    .frame_1 {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      z-index: -1;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .divContent {
+      width: 92%;
+      margin: auto;
+      margin-top: 8%;
+      height: 88%;
+      overflow: hidden; // opacity: 0;
+      .nameInVn {
+        width: 100%;
+        height: 9%;
+        .span-1 {
+          color: white;
+          font-size: 6.5vw;
+          font-family: "Mijas-Ultra" !important;
+          letter-spacing: 1px; // text-transform: lowercase;
+        }
+        .span-2 {
+          color: #fff255;
+          font-size: 5vw;
+          text-align: center;
+          width: 80%;
+          white-space: wrap;
+          font-family: "Mijas-Ultra" !important;
+          letter-spacing: 1px;
+        }
+      }
+      .attribute-container {
+        overflow: scroll;
+        padding: 10px;
+        height: 82%;
+        .attribute-item {
+          background: rgba(black, 0.2);
+          width: 94%;
+          margin: auto;
+          margin-bottom: 16px;
+          min-height: 80px;
+          border-radius: 5px;
+          padding: 5px;
+          .attribute-name {
+            span {
+              color: rgb(255, 243, 101);
+              font-size: 4.8vw;
+              font-family: "Mijas-Ultra" !important;
+              letter-spacing: 1px;
+            }
+          }
+          .attribute-content {
+            p {
+              margin: 0;
+              padding: 4px;
+              color: white;
+              font-family: Mijas-Pro-Italic !important;
+              white-space: pre-wrap;
+              font-size: 4vw;
+            }
+            .uh-row {
+              margin-top: 10px;
+              .uh-title {
+                width: 25%;
+                span {
+                  color: #fff255;
+                  font-family: Mijas-Pro-Italic !important;
+                  padding: 5px;
+                  font-size: 4vw;
+                }
+              }
+              .uh-content {
+                width: 75%;
+                span {
+                  padding: 5px;
+                  color: white;
+                  font-family: Mijas-Pro-Italic !important;
+                  white-space: pre-wrap;
+                  text-align: justify;
+                  font-size: 4vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .head-container {
+    background: rgba(black, 0.2);
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    .line-container {
+      width: 20%;
+      padding-left: 10px;
+      line-height: unset;
+      .line {
         position: relative;
         img {
-            max-width: 80%;
-            position: absolute;
+          max-width: 80%;
         }
+      }
     }
-    .notice {
-        padding-bottom: 14px;
+    .text-container {
+      width: 80%;
+      padding: 5px;
+      img {
+        transform: scale(1.2);
+      }
     }
-    ion-fab {
-        left: 0;
-        bottom: 0;
-        .btn-fab {
-            opacity: 0;
-        }
-        .item-fab-1 {
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-info-active {
-                display: none;
-            }
-        }
-        .item-fab-1:active {
-            .img-info-active {
-                display: block;
-            }
-        }
-        .item-fab-2 {
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-game-active {
-                display: none;
-            }
-        }
-    }
-    .more-button {
-        img {
-            left: 0;
-            bottom: 0;
-        }
-        .img-more-active {
-            display: none;
-        }
-    }
-    .more-button:active {
-        .img-more-active {
-            display: block;
-        }
-    }
-    .facebook-button {
-        img {
-            right: 0;
-            bottom: 0;
-        }
-        .img-facebook-active {
-            display: none;
-        }
-    }
-    .notice {
-        padding-top: 5px;
-        span {
-            color: white;
-            font-family: "Mijas-Ultra" !important;
-            line-height: 1.5rem;
-        }
-        .btn-back {
-            .btn-back-active {
-                position: absolute;
-                left: 0;
-                top: 0;
-                display: none;
-            }
-        }
-        .btn-back:active {
-            .btn-back-active {
-                position: absolute;
-                display: block;
-            }
-        }
-        .btn-detail {
-            .btn-detail-active {
-                position: absolute;
-                right: 0;
-                top: 0;
-                display: none;
-            }
-        }
-        .btn-detail:active {
-            .btn-detail-active {
-                display: block;
-            }
-        }
-    }
-    .botbar1 {
-        left: 0;
-        bottom: -1px;
-        height: 4px;
-        z-index: -1;
-        width: 100%;
-        background-position: center center;
-        background-size: cover;
-        background-image: url("../assets/fotunes/image/bot_bar_1.png");
-    }
-    .frame-background {
-        z-index: -1;
-        position: absolute;
-        top: 15%;
-        // animation: rotate-360 8s steps(72) infinite;
-        img {
-            transform: scale(1.6);
-        }
-        // background-position: center center;
-        // background-size: cover;
-        // background-image: url("../assets/image/frame_effect.png");
-    }
-    .detailPage-container {
-        line-height: unset;
-        overflow: hidden;
-        .frame_1 {
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-            z-index: -1;
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
-        .divContent {
-            width: 92%;
-            margin: auto;
-            margin-top: 8%;
-            height: 88%;
-            overflow: hidden;
-            // opacity: 0;
-            .nameInVn {
-                width: 100%;
-                height: 9%;
-                .span-1 {
-                    color: white;
-                    font-size: 6.5vw;
-                    font-family: "Mijas-Ultra" !important;
-                    letter-spacing: 1px;
-                    // text-transform: lowercase;
-                }
-                .span-2 {
-                    color: #fff255;
-                    font-size: 5vw;
-                    text-align: center;
-                    width: 80%;
-                    white-space: wrap;
-                    font-family: "Mijas-Ultra" !important;
-                    letter-spacing: 1px;
-                }
-            }
-            .attribute-container {
-                overflow: scroll;
-                padding: 10px;
-                height: 82%;
-                .attribute-item {
-                    background: rgba(black, 0.2);
-                    width: 94%;
-                    margin: auto;
-                    margin-bottom: 16px;
-                    min-height: 80px;
-                    border-radius: 5px;
-                    padding: 5px;
-                    .attribute-name {
-                        span {
-                            color: rgb(255, 243, 101);
-                            font-size: 4.8vw;
-                            font-family: "Mijas-Ultra" !important;
-                            letter-spacing: 1px;
-                        }
-                    }
-                    .attribute-content {
-                        p {
-                            margin: 0;
-                            padding: 4px;
-                            color: white;
-                            font-family: Mijas-Pro-Italic !important;
-                            white-space: pre-wrap;
-                            font-size: 4vw;
-                        }
-                        .uh-row {
-                            margin-top: 10px;
-                            .uh-title {
-                                width: 25%;
-                                span {
-                                    color: #fff255;
-                                    font-family: Mijas-Pro-Italic !important;
-                                    padding: 5px;
-                                    font-size: 4vw;
-                                }
-                            }
-                            .uh-content {
-                                width: 75%;
-                                span {
-                                    padding: 5px;
-                                    color: white;
-                                    font-family: Mijas-Pro-Italic !important;
-                                    white-space: pre-wrap;
-                                    text-align: justify;
-                                    font-size: 4vw;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .head-container {
-        background: rgba(black, 0.2);
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
-        border-radius: 5px;
-        .line-container {
-            width: 20%;
-            padding-left: 10px;
-            line-height: unset;
-            .line {
-                position: relative;
-                img {
-                    max-width: 80%;
-                }
-            }
-        }
-        .text-container {
-            width: 80%;
-            padding: 5px;
-            img {
-                transform: scale(1.2);
-            }
-        }
-    }
+  }
 }

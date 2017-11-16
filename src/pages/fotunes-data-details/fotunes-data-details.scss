@@ -148,6 +148,7 @@ page-fotunes-data-details {
             opacity: 0;
         }
         .item-fab-1 {
+            cursor: pointer;
             img {
                 position: absolute;
                 left: 0;
@@ -172,6 +173,7 @@ page-fotunes-data-details {
         }
     }
     .more-button {
+        cursor: pointer;
         img {
             left: 0;
             bottom: 0;
@@ -196,6 +198,7 @@ page-fotunes-data-details {
     }
     .notice {
         .btn-back {
+            cursor: pointer;
             img {
                 max-width: 60%;
             }

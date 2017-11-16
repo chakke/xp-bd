@@ -181,6 +181,7 @@ page-fotune-home {
             opacity: 0;
         }
         .item-fab-1 {
+            cursor: pointer;
             img {
                 position: absolute;
                 left: 0;
@@ -205,6 +206,7 @@ page-fotune-home {
         }
     }
     .more-button {
+        cursor: pointer;
         img {
             left: 0;
             bottom: 0;

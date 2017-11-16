@@ -106,12 +106,12 @@
         <ion-fab>
             <button ion-fab class="btn-fab"></button>
             <ion-fab-list side="top">
-                <div ion-fab class="item-fab-1" tappable (click)="viewInfo()">
+                <div ion-fab class="item-fab-1" tappable (tap)="viewInfo()">
                     <img src="assets/fotunes/image/btn_info_1.png" alt="">
                     <img src="assets/fotunes/image/btn_info_2.png" class="img-info-active">
                 </div>
 
-                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" tappable (click)="gotoPlayStore()">
+                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" tappable (tap)="gotoPlayStore()">
                     <div ion-fab class="item-fab-2">
                         <img src="assets/fotunes/image/btn_game_1.png" alt="">
                         <img src="assets/fotunes/image/btn_game_2.png" class="img-game-active" id="imgGameActive">
@@ -124,19 +124,19 @@
             <img src="assets/fotunes/image/btn_more_2.png" class="img-more-active">
         </div>
         <div class="notice a1-width-60 a3-container a3-justify-between a1-relative" text-center>
-            <div class="btn-back a1-relative" tappable (click)="closeView()">
+            <div class="btn-back a1-relative" tappable (tap)="closeView()">
                 <img src="assets/fotunes/image/btn_back_1.png" alt="">
                 <img src="assets/fotunes/image/btn_back_2.png" class="btn-back-active">
 
             </div>
             <div style="width: 20px"></div>
-            <div class="btn-detail a1-relative" tappable (click)="viewDetail()">
+            <div class="btn-detail a1-relative" tappable (tap)="viewDetail()">
                 <img src="assets/fotunes/image/btn_detail_1.png" alt="">
                 <img src="assets/fotunes/image/btn_detail_2.png" class="btn-detail-active">
             </div>
         </div>
 
-        <div class="btn facebook-button a1-width-20" text-right tappable (click)="goToFaceBook()">
+        <div class="btn facebook-button a1-width-20" text-right tappable (tap)="goToFaceBook()">
             <a href="https://www.facebook.com/groups/123547708286399/">
                 <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
                 <img src="assets/fotunes/image/btn_facebook_2.png" class="img-facebook-active" id="imgFacebookActive">

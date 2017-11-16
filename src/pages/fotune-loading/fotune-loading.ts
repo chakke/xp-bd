@@ -7,12 +7,6 @@ import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { FotuneHomePage } from '../fotune-home/fotune-home';
 import { AdMobFree } from "@ionic-native/admob-free";
 import { SplashScreen } from '@ionic-native/splash-screen';
-/**
- * Generated class for the FotuneLoadingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -29,7 +23,7 @@ export class FotuneLoadingPage {
     private mPlatform: Platform,
     public navCtrl: NavController, public navParams: NavParams) {
   }
-  // isFirstTime : boolean = true;
+
   ionViewDidLeave() {
     this.splash.hide();
   }
@@ -47,7 +41,9 @@ export class FotuneLoadingPage {
 
   onLoadedConfig() {
     let admobData = this.mAppModule.getAppConfig().get("admob");
-    this.mAppModule.getAdsManager().load(admobData);
+    setTimeout(() => {
+      this.mAppModule.getAdsManager().load(admobData);
+    }, 3000);
     let assets = this.mAppModule.getAppConfig().get("resources");
     AppModule.getInstance().getResourceLoader().load(assets).then(
       () => {
