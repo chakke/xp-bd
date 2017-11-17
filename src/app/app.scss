@@ -20,6 +20,30 @@ $content-height: calc(100vh - 56px);
 $inputHeight: 40px;
 $segment-height: 50px;
 $line-height: 20px;
+// ===============Fotunes==================
+ion-fab {
+    left: 0;
+    bottom: 0;
+    .btn-fab {
+        opacity: 0;
+    }
+    .item-fab {
+        cursor: pointer;
+        img {
+            filter: brightness(100%);
+            transition: .2s;
+            position: absolute;
+            left: 0;
+        }
+    }
+    .item-fab:active {
+        img {
+            filter: brightness(120%);
+        }
+    }
+}
+
+// ====================end==================
 .background-image {
     background-position: center center;
     background-repeat: no-repeat;

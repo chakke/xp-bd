@@ -37,23 +37,17 @@ export class FotunesDataDetailsPage {
       this.heightLine = "20px";
     }
   }
-  gotoPlayStore(){
-    let elem = document.getElementById("imgGameActive");
+  activeMore(){
+    let elem = document.getElementById("imgMoreActive");
     if(elem){
       elem.style.display = "block";
       setTimeout(() => {
-        elem.style.display ="none"; 
-      }, 100);
+        elem.style.display = "none";
+      }, 300);
     }
   }
-  goToFaceBook(){
-    let elem = document.getElementById("imgFacebookActive");
-    if(elem){
-      elem.style.display = "block";
-      setTimeout(() => {
-        elem.style.display ="none"; 
-      }, 100);
-    }
+  viewInfo() {
+    this.navCtrl.push("FotuneInfoPage");
   }
   loadParams(){
     if(this.navParams.get("fotune")){

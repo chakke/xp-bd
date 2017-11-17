@@ -33,12 +33,15 @@ page-fotune-info {
                     margin: 0;
                     padding: 5px;
                     color: white;
+                    font-size: 4.5vw;
                     font-family: Mijas-Pro-Italic !important;
+                    letter-spacing: 1px;
                 }
                 .info-name {
                     padding-left: 5px;
                     padding-top: 5px;
                     span {
+                        font-size: 5vw;
                         font-family: "Mijas-Ultra" !important;
                         color: #f2d475;
                     }
@@ -53,19 +56,25 @@ page-fotune-info {
     .btn {
         padding-bottom: 10px;
         .btn-back {
-            img {}
-            .btn_back-active {
-                position: absolute;
-                top: 0;
-                display: none;
+            img {
+                filter: brightness(100%);
+                transition: .2s;
+            }
+        }
+        .btn-back:active {
+            img {
+                filter: brightness(120%);
             }
         }
         .btn-contact {
-            img {}
-            .btn_contact-active {
-                position: absolute;
-                top: 0;
-                display: none;
+            img {
+                filter: brightness(100%);
+                transition: .2s;
+            }
+        }
+        .btn-contact:active {
+            img {
+                filter: brightness(120%);
             }
         }
     }

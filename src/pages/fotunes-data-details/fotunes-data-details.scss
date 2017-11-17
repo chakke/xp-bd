@@ -1,6 +1,6 @@
 page-fotunes-data-details {
     ion-content {
-        background-image: url("../assets/image/background.png");
+        background-image: url("../assets/fotunes/image/background.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -90,6 +90,7 @@ page-fotunes-data-details {
                             font-family: Mijas-Pro-Italic !important;
                             white-space: pre-wrap;
                             font-size: 4vw;
+                            letter-spacing: 1px;
                         }
                         .uh-row {
                             margin-top: 10px;
@@ -100,6 +101,7 @@ page-fotunes-data-details {
                                     font-family: Mijas-Pro-Italic !important;
                                     padding: 5px;
                                     font-size: 4vw;
+                                    letter-spacing: 1px;
                                 }
                             }
                             .uh-content {
@@ -111,6 +113,7 @@ page-fotunes-data-details {
                                     white-space: pre-wrap;
                                     text-align: justify;
                                     font-size: 4vw;
+                                    letter-spacing: 1px;
                                 }
                             }
                         }
@@ -141,37 +144,6 @@ page-fotunes-data-details {
     .notice {
         padding-bottom: 10px;
     }
-    ion-fab {
-        left: 0;
-        bottom: 0;
-        .btn-fab {
-            opacity: 0;
-        }
-        .item-fab-1 {
-            cursor: pointer;
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-info-active {
-                display: none;
-            }
-        }
-        .item-fab-1:active {
-            .img-info-active {
-                display: block;
-            }
-        }
-        .item-fab-2 {
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-game-active {
-                display: none;
-            }
-        }
-    }
     .more-button {
         cursor: pointer;
         img {
@@ -189,31 +161,29 @@ page-fotunes-data-details {
     }
     .facebook-button {
         img {
+            filter: brightness(100%);
+            transition: .2s;
             right: 0;
             bottom: 0;
         }
-        .img-facebook-active {
-            display: none;
+    }
+    .facebook-button:active {
+        img {
+            filter: brightness(120%);
         }
     }
     .notice {
         .btn-back {
             cursor: pointer;
             img {
+                filter: brightness(100%);
+                transition: .2s;
                 max-width: 60%;
-            }
-            .btn-back-active {
-                position: absolute;
-                left: 50%;
-                top: 0;
-                transform: translateX(-50%);
-                display: none;
             }
         }
         .btn-back:active {
-            .btn-back-active {
-                position: absolute;
-                display: block;
+            img {
+                filter: brightness(120%);
             }
         }
     }
