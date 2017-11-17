@@ -45,22 +45,13 @@ export class FotuneDetailPage {
   // ionViewDidEnter() {
   //   this.loadParams();
   // }
-  gotoPlayStore(){
-    let elem = document.getElementById("imgGameActive");
+  activeMore(){
+    let elem = document.getElementById("imgMoreActive");
     if(elem){
       elem.style.display = "block";
       setTimeout(() => {
-        elem.style.display ="none"; 
-      }, 100);
-    }
-  }
-  goToFaceBook(){
-    let elem = document.getElementById("imgFacebookActive");
-    if(elem){
-      elem.style.display = "block";
-      setTimeout(() => {
-        elem.style.display ="none"; 
-      }, 100);
+        elem.style.display = "none";
+      }, 300);
     }
   }
   loadParams(){
@@ -81,6 +72,9 @@ export class FotuneDetailPage {
   }
   closeView(){
     this.navCtrl.pop();
+  }
+  viewInfo() {
+    this.navCtrl.push("FotuneInfoPage");
   }
   viewDetail(){
     this.fotuneDataDetail.setID(this.fotune.id);

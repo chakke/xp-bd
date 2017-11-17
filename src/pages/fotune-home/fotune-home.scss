@@ -8,8 +8,8 @@ page-fotune-home {
     $plate-max-width: 160px;
     $skeleton-background-max-width: 280px;
     ion-content {
-        background-image: url("../assets/image/background.png");
-        .scroll-content{
+        background-image: url("../assets/fotunes/image/background.png");
+        .scroll-content {
             overflow-y: hidden !important;
         }
     }
@@ -22,7 +22,7 @@ page-fotune-home {
         z-index: -1;
         .large-circle {
             max-width: 80%;
-            animation: rotate-360 12s steps(108) infinite;
+            animation: rotate-360 18s steps(108) infinite;
         }
         .small-circle {
             width: 60%;
@@ -133,17 +133,16 @@ page-fotune-home {
         left: 0;
         width: 100%;
         text-align: center;
-        .btn-done-active {
-            display: none;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
+        #btnDone {
+            // transition: 100ms;
         }
         .btn_done_1 {
             width: 50%;
             z-index: 10;
             img {
+                transform: scale(1);
+                filter: brightness(100%);
+                transition: .2s;
                 // max-width: 45%;
             }
             .numberQue {
@@ -156,6 +155,12 @@ page-fotune-home {
                     font-size: 4vw;
                     font-family: "Mijas-Ultra" !important;
                 }
+            }
+        }
+        .btn_done_1:active {
+            img {
+                transform: scale(.96);
+                filter: brightness(118%);
             }
         }
     }
@@ -174,37 +179,6 @@ page-fotune-home {
             position: absolute;
         }
     }
-    ion-fab {
-        left: 0;
-        bottom: 0;
-        .btn-fab {
-            opacity: 0;
-        }
-        .item-fab-1 {
-            cursor: pointer;
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-info-active {
-                display: none;
-            }
-        }
-        .item-fab-1:active {
-            .img-info-active {
-                display: block;
-            }
-        }
-        .item-fab-2 {
-            img {
-                position: absolute;
-                left: 0;
-            }
-            .img-game-active {
-                display: none;
-            }
-        }
-    }
     .more-button {
         cursor: pointer;
         img {
@@ -215,18 +189,17 @@ page-fotune-home {
             display: none;
         }
     }
-    .more-button:active {
-        .img-more-active {
-            display: block;
-        }
-    }
     .facebook-button {
         img {
+            filter: brightness(100%);
+            transition: .2s;
             right: 0;
             bottom: 0;
         }
-        .img-facebook-active {
-            display: none;
+    }
+    .facebook-button:active {
+        img {
+            filter: brightness(120%);
         }
     }
     .notice {

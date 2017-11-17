@@ -21,7 +21,6 @@
             <div class="nameInVn a3-container-center">
                 <span class="span-1"> <span>{{fotune.nameInVN.slice(0,1).toUpperCase()}}</span>{{fotune.nameInVN.split('(')[0].substring(1).toLowerCase()}}</span>
             </div>
-            <div style="height: 10px"></div>
             <div class="nameInVn a3-container-center">
                 <span class="span-2">( {{fotune.nameInVN.split('(')[1].replace(")", "")}} )</span>
             </div>
@@ -105,34 +104,30 @@
     <div class="a3-container a1-relative">
         <div class="a1-absolute botbar1"></div>
         <ion-fab>
-            <button ion-fab class="btn-fab"></button>
+            <button ion-fab class="btn-fab" (click)="activeMore()"></button>
             <ion-fab-list side="top">
-                <div ion-fab class="item-fab-1" tappable (tap)="viewInfo()">
+                <div ion-fab class="item-fab" tappable (click)="viewInfo()">
                     <img src="assets/fotunes/image/btn_info_1.png" alt="">
-                    <img src="assets/fotunes/image/btn_info_2.png" class="img-info-active">
                 </div>
-                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" tappable (tap)="gotoPlayStore()">
-                    <div ion-fab class="item-fab-2">
+                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" tappable>
+                    <div ion-fab class="item-fab">
                         <img src="assets/fotunes/image/btn_game_1.png" alt="">
-                        <img src="assets/fotunes/image/btn_game_2.png" class="img-game-active" id="imgGameActive">
                     </div>
                 </a>
             </ion-fab-list>
         </ion-fab>
         <div class="btn more-button a1-width-20" text-left>
             <img src="assets/fotunes/image/btn_more_1.png" alt="">
-            <img src="assets/fotunes/image/btn_more_2.png" class="img-more-active">
+            <img src="assets/fotunes/image/btn_more_2.png" class="img-more-active" id="imgMoreActive">
         </div>
         <div class="notice a1-width-60  a1-relative" text-center>
             <div class="btn-back a1-relative" tappable (tap)="closeView()">
                 <img src="assets/fotunes/image/btn_back_1.png" alt="">
-                <img src="assets/fotunes/image/btn_back_2.png" class="btn-back-active">
             </div>
         </div>
-        <div class="btn facebook-button a1-width-20" text-right tappable (tap)="goToFaceBook()">
+        <div class="btn facebook-button a1-width-20" text-right tappable>
             <a href="https://www.facebook.com/groups/123547708286399/">
                 <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
-                <img src="assets/fotunes/image/btn_facebook_2.png" class="img-facebook-active" id="imgFacebookActive">
             </a>
         </div>
     </div>

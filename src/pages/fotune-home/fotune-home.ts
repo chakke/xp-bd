@@ -194,11 +194,6 @@ export class FotuneHomePage {
   isRunFirstView: boolean = false;
   numberQue: number = 1;
   shuffSkeleton() {
-    let elem = document.getElementById("btnDoneActive");
-    if (elem) { elem.style.display = "block"; }
-    setTimeout(() => {
-      elem.style.display = "none";
-    }, 100);
     if (this.isShowResult) {
       this.navCtrl.push("FotuneDetailPage", {
         fotune: this.fotune,
@@ -208,7 +203,13 @@ export class FotuneHomePage {
     }
     if (!this.isRunShuffe && !this.isTransition) {
       this.isRunShuffe = true;
-
+      // let elm = document.getElementById("btnDone");
+      // if(elm){
+      //   elem.style.transform = "scale(1.2)";
+      //   setTimeout(() => {
+      //     elem.style.transform = "scale(1.0)";
+      //   }, 400);
+      // }
       this.playAudio();
       let Bgnumber: number = this.runRandomCoins();
       this.translateCoins();
@@ -244,24 +245,7 @@ export class FotuneHomePage {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
   }
-  gotoPlayStore() {
-    let elem = document.getElementById("imgGameActive");
-    if (elem) {
-      elem.style.display = "block";
-      setTimeout(() => {
-        elem.style.display = "none";
-      }, 100);
-    }
-  }
-  goToFaceBook() {
-    let elem = document.getElementById("imgFacebookActive");
-    if (elem) {
-      elem.style.display = "block";
-      setTimeout(() => {
-        elem.style.display = "none";
-      }, 100);
-    }
-  }
+ 
   openSkeleton() {
     let element = document.getElementById("skeletonCover");
     if (element) {
@@ -327,6 +311,15 @@ export class FotuneHomePage {
   }
 
 
+  activeMore(){
+    let elem = document.getElementById("imgMoreActive");
+    if(elem){
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.style.display = "none";
+      }, 300);
+    }
+  }
 
 
   skeletonPath: string[] = [];

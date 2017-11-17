@@ -41,9 +41,9 @@ export class FotuneLoadingPage {
 
   onLoadedConfig() {
     let admobData = this.mAppModule.getAppConfig().get("admob");
-    setTimeout(() => {
+    // setTimeout(() => {
       this.mAppModule.getAdsManager().load(admobData);
-    }, 3000);
+    // }, 3000);
     let assets = this.mAppModule.getAppConfig().get("resources");
     AppModule.getInstance().getResourceLoader().load(assets).then(
       () => {
