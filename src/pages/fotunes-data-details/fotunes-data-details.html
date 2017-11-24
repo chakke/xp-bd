@@ -109,7 +109,7 @@
                 <div ion-fab class="item-fab" tappable (click)="viewInfo()">
                     <img src="assets/fotunes/image/btn_info_1.png" alt="">
                 </div>
-                <a href="https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi" tappable>
+                <a [href]="storeUrl"  tappable>
                     <div ion-fab class="item-fab">
                         <img src="assets/fotunes/image/btn_game_1.png" alt="">
                     </div>
@@ -126,7 +126,7 @@
             </div>
         </div>
         <div class="btn facebook-button a1-width-20" text-right tappable>
-            <a href="https://www.facebook.com/groups/123547708286399/">
+            <a [href]="facebookUrl">
                 <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
             </a>
         </div>

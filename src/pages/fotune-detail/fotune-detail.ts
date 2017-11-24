@@ -10,79 +10,87 @@ import { FotunesModule } from '../../providers/fotunes/fotunes';
   templateUrl: 'fotune-detail.html',
 })
 export class FotuneDetailPage {
+  facebookUrl: string = "https://www.facebook.com/boidich";
   resultLines: string[] = [];
-  fotune  : Fotunes;
-  fotuneDataDetail : FotunesDetail;
+  fotune: Fotunes;
+  fotuneDataDetail: FotunesDetail;
   isLoading: boolean = false;
-  heightLine : string = "7px";
+  heightLine: string = "7px";
   constructor(
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
     this.fotune = new Fotunes();
     this.fotuneDataDetail = new FotunesDetail();
-    for(let i = 0;i<6;i++){
+    for (let i = 0; i < 6; i++) {
       this.resultLines.push("./assets/fotunes/image/line_bg.png");
     }
     this.loadParams();
     let screenHeight = screen.height;
-    if(screenHeight < 600){
+    if (screenHeight < 600) {
       this.heightLine = "6px";
     }
-    else if(screenHeight > 600 && screenHeight < 700){
+    else if (screenHeight > 600 && screenHeight < 700) {
       this.heightLine = "8px";
     }
-    else if(screenHeight > 700 && screenHeight < 800){
+    else if (screenHeight > 700 && screenHeight < 800) {
       this.heightLine = "9px";
     }
-    else if(screenHeight > 1000 && screenHeight < 1100){
+    else if (screenHeight > 1000 && screenHeight < 1100) {
       this.heightLine = "16px";
     }
-    else if(screenHeight > 1300){
+    else if (screenHeight > 1300) {
       this.heightLine = "20px";
     }
   }
-
+  ionViewDidEnter() {
+    let config = this.mAppModule.getAppConfig().get("config");
+    if (config) {
+      if ("facebook_group" in config) {
+        this.facebookUrl = config.facebook_group;
+      }
+    }
+  }
   // ionViewDidEnter() {
   //   this.loadParams();
   // }
-  activeMore(){
+  activeMore() {
     let elem = document.getElementById("imgMoreActive");
-    if(elem){
+    if (elem) {
       elem.style.display = "block";
       setTimeout(() => {
         elem.style.display = "none";
       }, 300);
     }
   }
-  loadParams(){
-    if(this.navParams.get("fotune")){
+  loadParams() {
+    if (this.navParams.get("fotune")) {
       this.fotune = this.navParams.get("fotune");
       // console.log(this.fotune);
-      
-    }else{
+
+    } else {
       return;
     }
 
-    if(this.navParams.get("resultLines")){
+    if (this.navParams.get("resultLines")) {
       this.resultLines = this.navParams.get("resultLines");
-    }else{
+    } else {
       return;
     }
     // this.isLoading = false;
   }
-  closeView(){
+  closeView() {
     this.navCtrl.pop();
   }
   viewInfo() {
     this.navCtrl.push("FotuneInfoPage");
   }
-  viewDetail(){
+  viewDetail() {
     this.fotuneDataDetail.setID(this.fotune.id);
     this.mAppModule.updateDataDetail(this.fotuneDataDetail);
-    this.navCtrl.push("FotunesDataDetailsPage",{
-      resultLines : this.resultLines,
+    this.navCtrl.push("FotunesDataDetailsPage", {
+      resultLines: this.resultLines,
       fotune: this.fotune,
-      fotuneDetail : this.fotuneDataDetail
+      fotuneDetail: this.fotuneDataDetail
     });
   }
 }
