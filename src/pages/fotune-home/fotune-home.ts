@@ -86,8 +86,6 @@ export class FotuneHomePage {
     this.navCtrl.push("FotuneInfoPage");
   }
   ionViewDidEnter() {
-<<<<<<< HEAD
-=======
     let config = this.mAppModule.getAppConfig().get("config");
     if (config) {
       if ("facebook_group" in config) {
@@ -107,15 +105,6 @@ export class FotuneHomePage {
       }
 
     }
-    if (!this.data) {
-      this.mAppModule.getDataFROMJSON().then(
-        data => {
-          this.data = data;
-        }, error => { }
-      )
-    }
-
->>>>>>> be490f798dea7842ce62129085f28ff16bc84476
     this.resetResult();
     this.resetLineResult();
   }
