@@ -155,6 +155,29 @@ export class FotunesModule {
     }
   }
 
+  getFotunesData(){
+    console.log('get data');
+    
+    return new Promise((resolve,reject)=>{
+      if(this.fortunesData.length > 0){
+    console.log('get data');
+    
+        resolve(this.fortunesData);
+      }
+      else{
+        this.getDataFROMJSON().then((res)=>{
+    console.log('get data');
+    
+          if(res){
+            console.log(res);
+            resolve(res);
+          }
+        })
+      }
+    })
+   
+  }
+
   loadAudio(src: string) {
     this.mAudio.src = src;
   }

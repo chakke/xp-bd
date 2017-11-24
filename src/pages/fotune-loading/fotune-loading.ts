@@ -28,6 +28,16 @@ export class FotuneLoadingPage {
     this.splash.hide();
   }
   ionViewDidEnter() {
+    this.mAppModule.getDataFROMJSON().then(res=>{
+      if(res){
+        let temp = res;
+      }
+    })
+    this.mAppModule.getDataDetailFROMJSON().then(res=>{
+      if(res){
+        let temp = res;
+      }
+    })
     AppController.getInstance().setPlatform(this.mPlatform);
     this.mAppModule.isOnMobileDevice = AppController.getInstance().isOnMobileDevice();
     this.mAppModule.mAdsManager.setAdmobFree(this.mAdmobfree);

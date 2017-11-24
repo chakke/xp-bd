@@ -65,7 +65,7 @@ export class FotuneHomePage {
     }
     else if (screen.height > 600 && screen.height < 700) {
       this.lineResultHeight = "12px";
-      this.containerCoinHeight = "100px";
+      this.containerCoinHeight = "90px";
     }
     else if (screen.height > 700 && screen.height < 800) {
       this.lineResultHeight = "15px";
@@ -80,15 +80,6 @@ export class FotuneHomePage {
     this.navCtrl.push("FotuneInfoPage");
   }
   ionViewDidEnter() {
-
-    if (!this.data) {
-      this.mAppModule.getDataFROMJSON().then(
-        data => {
-          this.data = data;
-        }, error => { }
-      )
-    }
-
     this.resetResult();
     this.resetLineResult();
   }

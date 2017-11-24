@@ -1,11 +1,5 @@
 <ion-header>
     <div class="head-container a3-container a3-justify-between">
-        <div class="line-container">
-            <div [style.height]="heightLine" class="line" *ngFor="let image of resultLines">
-                <img src="{{image}}">
-            </div>
-
-        </div>
         <div class="text-container">
             <img src="{{fotune.imageSrc}}">
         </div>
@@ -21,6 +15,7 @@
             <div class="nameInVn a3-container-center">
                 <span class="span-1"> <span>{{fotune.nameInVN.slice(0,1).toUpperCase()}}</span>{{fotune.nameInVN.split('(')[0].substring(1).toLowerCase()}}</span>
             </div>
+            <div style="height: 10px"></div>
             <div class="nameInVn a3-container-center">
                 <span class="span-2">( {{fotune.nameInVN.split('(')[1].replace(")", "")}} )</span>
             </div>
@@ -28,7 +23,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 1: </span>
-                        <img src="{{resultLines[0]}}" alt="">
+                        <img src="{{resultLines[5]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h1}}</p>
@@ -37,7 +32,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 2: </span>
-                        <img src="{{resultLines[1]}}" alt="">
+                        <img src="{{resultLines[4]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h2}}</p>
@@ -46,7 +41,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 3: </span>
-                        <img src="{{resultLines[2]}}" alt="">
+                        <img src="{{resultLines[3]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h3}}</p>
@@ -55,7 +50,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 4: </span>
-                        <img src="{{resultLines[3]}}" alt="">
+                        <img src="{{resultLines[2]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h4}}</p>
@@ -64,7 +59,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 5: </span>
-                        <img src="{{resultLines[4]}}" alt="">
+                        <img src="{{resultLines[1]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h5}}</p>
@@ -73,7 +68,7 @@
                 <div class="attribute-item">
                     <div class="attribute-name a3-container a3-justify-between a3-items-center">
                         <span>Hào 6: </span>
-                        <img src="{{resultLines[5]}}" alt="">
+                        <img src="{{resultLines[0]}}" alt="">
                     </div>
                     <div class="attribute-content">
                         <p>{{fotunesDetail.h6}}</p>

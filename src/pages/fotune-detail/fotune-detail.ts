@@ -19,6 +19,7 @@ export class FotuneDetailPage {
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
     this.fotune = new Fotunes();
+    // this.test();
     this.fotuneDataDetail = new FotunesDetail();
     for(let i = 0;i<6;i++){
       this.resultLines.push("./assets/fotunes/image/line_bg.png");
@@ -41,9 +42,6 @@ export class FotuneDetailPage {
       this.heightLine = "20px";
     }
   }
-  // ionViewDidEnter() {
-  //   this.loadParams();
-  // }
   activeMore(){
     let elem = document.getElementById("imgMoreActive");
     if(elem){
@@ -67,6 +65,8 @@ export class FotuneDetailPage {
     }else{
       return;
     }
+
+   
     // this.isLoading = false;
   }
   closeView(){
