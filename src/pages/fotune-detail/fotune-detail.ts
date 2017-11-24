@@ -43,9 +43,7 @@ export class FotuneDetailPage {
       this.heightLine = "20px";
     }
   }
-<<<<<<< HEAD
-  activeMore(){
-=======
+
   ionViewDidEnter() {
     let config = this.mAppModule.getAppConfig().get("config");
     if (config) {
@@ -58,7 +56,6 @@ export class FotuneDetailPage {
   //   this.loadParams();
   // }
   activeMore() {
->>>>>>> be490f798dea7842ce62129085f28ff16bc84476
     let elem = document.getElementById("imgMoreActive");
     if (elem) {
       elem.style.display = "block";
