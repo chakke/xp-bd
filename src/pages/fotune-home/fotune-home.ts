@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { FotunesModule } from '../../providers/fotunes/fotunes';
 import { Fotunes } from '../../providers/class/fotunes';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { log } from 'util';
 
 /**
  * Generated class for the FotuneHomePage page.
@@ -16,6 +17,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'fotune-home.html',
 })
 export class FotuneHomePage {
+
+  facebookUrl: string = "https://www.facebook.com/boidich";
+  storeUrl: string = "https://play.google.com/store/apps/dev?id=8988959007894361415&hl=vi";
+
   pathSkeleton: string = "./assets/fotunes/image/frame/skeleton-play_";
   pathResultStart: string = "./assets/fotunes/image/frame/eff_result-start_";
   pathResultEnd: string = "./assets/fotunes/image/frame/eff_result-end_";
@@ -36,6 +41,7 @@ export class FotuneHomePage {
   lineResultHeight: string = "10px";
   containerCoinHeight: string = "80px";
   constructor(
+    private mPlatform: Platform,
     private mAppModule: FotunesModule,
     public navCtrl: NavController, public navParams: NavParams) {
     this.getImage();
@@ -80,6 +86,36 @@ export class FotuneHomePage {
     this.navCtrl.push("FotuneInfoPage");
   }
   ionViewDidEnter() {
+<<<<<<< HEAD
+=======
+    let config = this.mAppModule.getAppConfig().get("config");
+    if (config) {
+      if ("facebook_group" in config) {
+        this.facebookUrl = config.facebook_group;
+      }
+
+      if (this.mPlatform.is("android")) {
+        if ("android_store_url" in config) {
+          this.storeUrl = config.android_store_url;
+          console.log("Platform android");
+        }
+      } else if (this.mPlatform.is("ios")) {
+        if ("ios_store_url" in config) {
+          this.storeUrl = config.ios_store_url;
+          console.log("Platform ios");
+        }
+      }
+
+    }
+    if (!this.data) {
+      this.mAppModule.getDataFROMJSON().then(
+        data => {
+          this.data = data;
+        }, error => { }
+      )
+    }
+
+>>>>>>> be490f798dea7842ce62129085f28ff16bc84476
     this.resetResult();
     this.resetLineResult();
   }
@@ -236,7 +272,7 @@ export class FotuneHomePage {
     this.mAppModule.loadAudio(this.path2);
     this.mAppModule.playAudio();
   }
- 
+
   openSkeleton() {
     let element = document.getElementById("skeletonCover");
     if (element) {
@@ -302,9 +338,9 @@ export class FotuneHomePage {
   }
 
 
-  activeMore(){
+  activeMore() {
     let elem = document.getElementById("imgMoreActive");
-    if(elem){
+    if (elem) {
       elem.style.display = "block";
       setTimeout(() => {
         elem.style.display = "none";

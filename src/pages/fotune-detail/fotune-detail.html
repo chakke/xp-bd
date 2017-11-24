@@ -26,7 +26,13 @@
             <div class="nameInVn a3-container-center">
                 <span class="span-1"> <span>{{fotune.nameInVN.slice(0,1).toUpperCase()}}</span>{{fotune.nameInVN.split('(')[0].substring(1).toLowerCase()}}</span>
             </div>
+<<<<<<< HEAD
             <div style="height: 10px"></div>
+=======
+          
+            <div style="height: 10px"></div>
+
+>>>>>>> be490f798dea7842ce62129085f28ff16bc84476
             <div class="nameInVn a3-container-center">
                 <span class="span-2">( {{fotune.nameInVN.split('(')[1].replace(")", "")}} )</span>
             </div>
@@ -132,7 +138,7 @@
         </div>
 
         <div class="btn facebook-button a1-width-20" text-right tappable>
-            <a href="https://www.facebook.com/groups/123547708286399/">
+            <a [href]="facebookUrl">
                 <img src="assets/fotunes/image/btn_facebook_1.png" alt="">
             </a>
         </div>
