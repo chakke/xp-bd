@@ -41,7 +41,6 @@ export class FotuneDetailPage {
       this.heightLine = "20px";
     }
   }
-
   // ionViewDidEnter() {
   //   this.loadParams();
   // }
