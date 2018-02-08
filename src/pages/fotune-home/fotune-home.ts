@@ -37,8 +37,7 @@ export class FotuneHomePage {
   data: any;
   path1: string = "";
   path2: string = "";
-  widthResulteff: string = "40%";
-  lineResultHeight: string = "10px";
+  
   containerCoinHeight: string = "80px";
   constructor(
     private mPlatform: Platform,
@@ -55,32 +54,10 @@ export class FotuneHomePage {
     }
     this.lineID = ["line1", "line2", "line3", "line4", "line5", "line6"];
     this.fotune = new Fotunes();
-    if (screen.width > 700) {
-      this.widthResulteff = Math.round(screen.width * 0.3) + "px";
-    } else {
-      this.widthResulteff = Math.round(screen.width * 0.4) + "px";
-    }
-    this.onResize()
   }
 
 
-  onResize() {
-    if (screen.height < 500) {
-      this.lineResultHeight = "10px";
-      this.containerCoinHeight = "80px";
-    }
-    else if (screen.height > 600 && screen.height < 700) {
-      this.lineResultHeight = "12px";
-      this.containerCoinHeight = "90px";
-    }
-    else if (screen.height > 700 && screen.height < 800) {
-      this.lineResultHeight = "15px";
-      this.containerCoinHeight = "120px";
-    } else if (screen.height > 800) {
-      this.lineResultHeight = "20px";
-      this.containerCoinHeight = "180px";
-    }
-  }
+  
 
   viewInfo() {
     this.navCtrl.push("FotuneInfoPage");
@@ -107,6 +84,7 @@ export class FotuneHomePage {
     }
     this.resetResult();
     this.resetLineResult();
+    
   }
   resetResult() {
     this.fotune.setDefault();
@@ -265,7 +243,7 @@ export class FotuneHomePage {
   openSkeleton() {
     let element = document.getElementById("skeletonCover");
     if (element) {
-      element.style.transform = "translate(50%,50%)";
+      element.style.transform = "translate(60%,60%)";
     } else {
       return;
     }
@@ -285,11 +263,16 @@ export class FotuneHomePage {
 
   translateCoins() {
     let coinElements = document.getElementsByClassName("coin");
-
+    let containerCoinElement = document.getElementById("plateCoinContainer");
+    var maxRand: number = 80;
+    
+    if(containerCoinElement){
+      maxRand = containerCoinElement.clientHeight;
+    }
+    
     if (coinElements) {
       let xPosition = [0, 0, 0];
       let yPosition = [0, 0, 0];
-      var maxRand: number = parseInt(this.containerCoinHeight);
       maxRand = maxRand - (maxRand * 0.3);
       for (let i = 0; i < 3; i++) {
         xPosition[i] = this.runRandomPosition(1, maxRand);

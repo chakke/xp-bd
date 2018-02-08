@@ -7,6 +7,68 @@ page-fotune-home {
     $eff-text-width: 100%;
     $plate-max-width: 160px;
     $skeleton-background-max-width: 280px;
+    $lineHeight: 10px;
+    $plateCoingContainer: 80px;
+    @media (min-width: 320px) and (max-width: 375px){
+        .a-page-result-effect{
+            width: 160px;
+        }
+        .line{
+            height: $lineHeight;
+        }
+        .plate-coin{
+            height: $plateCoingContainer;
+            width: $plateCoingContainer;
+        }
+        .numberQue{
+            span{
+                font-size: 1.5rem !important;
+                top: 14% !important;
+            }
+        }
+    }
+    @media (min-width: 412px) and (max-width: 414px){
+        .a-page-result-effect{
+            width: 180px;
+        }
+        .line{
+            height: $lineHeight * 1.2;
+        }
+        .plate-coin{
+            height: $plateCoingContainer * 1.5;
+            width: $plateCoingContainer * 1.5;
+        }
+        .notice{
+            span{
+                font-size: 2rem !important;
+                line-height: 2rem !important;
+            }
+        }
+    }
+    @media (min-height: 640px) and (max-width: 414px){
+        .a-page-result-effect{
+            width: 160px;
+        }
+        .line{
+            height: $lineHeight * 1.2;
+        }
+        .plate-coin{
+            height: $plateCoingContainer * 1.2;
+            width: $plateCoingContainer * 1.2;
+        }
+        .notice{
+            span{
+                font-size: 2rem !important;
+                line-height: 2rem !important;
+            }
+        }
+        .numberQue{
+            span{
+                font-size: 2rem !important; 
+                top: 14% !important;
+            }
+        }
+    }
     ion-content {
         background-image: url("../assets/fotunes/image/background.png");
         .scroll-content {
@@ -148,11 +210,11 @@ page-fotune-home {
             .numberQue {
                 position: absolute;
                 left: 50%;
-                top: 16%;
+                top: 12%;
                 transform: translateX(-50%);
                 span {
                     color: white;
-                    font-size: 4vw;
+                    font-size: 2rem;
                     font-family: "Mijas-Ultra" !important;
                 }
             }
@@ -203,11 +265,12 @@ page-fotune-home {
         }
     }
     .notice {
-        padding-top: 5px;
+        // padding-top: 5px;
         span {
             color: white;
             font-family: "Mijas-Ultra" !important;
             line-height: 1.5rem;
+            font-size: 1.6rem;
         }
     }
     .botbar1 {
