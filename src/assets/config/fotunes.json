@@ -11,24 +11,24 @@
     "platform": "android",
     "android": {
       "banner": {
-        "id": "ca-app-pub-5504805357330554/3621021447",
+        "id": "ca-app-pub-5504805357330554/4941486759",
         "isTesting": false,
         "autoShow": false
       },
       "interstitial": {
-        "id": "ca-app-pub-5504805357330554/5663541484",
+        "id": "ca-app-pub-5504805357330554/1560644947",
         "isTesting": false,
         "autoShow": false
       }
     },
     "ios": {
       "banner": {
-        "id": "ca-app-pub-5504805357330554/9483366996",
+        "id": "ca-app-pub-5504805357330554/7751838148",
         "isTesting": false,
         "autoShow": false
       },
       "interstitial": {
-        "id": "ca-app-pub-5504805357330554/7081878012",
+        "id": "ca-app-pub-5504805357330554/2635242838",
         "isTesting": false,
         "autoShow": false
       }
